@@ -30,8 +30,8 @@ export class TableComponent {
     console.log(data)
     this.editDataEvent.emit(data);
   }
-  clickAction(event:any) {
-    this.actionClicked.emit(event);
+  clickAction(event:any,data:any) {
+    this.actionClicked.emit(data);
   }
   
 }

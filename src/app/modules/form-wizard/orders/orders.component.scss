@@ -42,14 +42,11 @@
         }
         .actionOtr{
             width: 14%;
-            background: white;
+            background: $white-color;
             display: block;
             padding: 10px;
-            // justify-content: space-between;
-            border: 0.5px solid #CBCBCB;
+            border: 0.5px solid $gray-shade4-color;
             border-radius: 10px;
-            margin-left: 84%;
-            margin-top: -8%;
             position: absolute;
             .actionBtn{
                 background-color: $primary-blue-color;
@@ -64,11 +61,8 @@
             }
         }
         .tabContainer{
-           position: relative;
+           position: absolute;
         }
-        // .tabContainer{
-           
-        // }
 }
 ::ng-deep {
     .orderTabContainer {

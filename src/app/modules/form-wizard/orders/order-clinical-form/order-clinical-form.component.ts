@@ -11,12 +11,12 @@ import { PopupFormComponent } from "../../../../shared/components/popup-form/pop
     imports: [CommonModule, SearchFavComponent, PopupFormComponent]
 })
 export class OrderClinicalFormComponent {
-  medicalCodeList:any[]=[
-    {id:1,text:'Vita D 1000 IU - 60IU',isFavourite: false,isSelected: false},
-    {id:2,text:'',isFavourite: false,isSelected: false},
-    {id:3,text:'DIOSTAR 160 mg film-coated tablet - 30mg',isFavourite: false,isSelected: false},
-    {id:4,text:'DIOSTAR 80 mg film-coated tablet - 30mg',isFavourite: false,isSelected: false},
-    {id:5,text:'Eyela 40 mg/ml Solution for injection in pre-filled syringe 1mg/ml',isFavourite: false,isSelected: false},
-   
+  medicationList:any[]=[
+    {id:1,text:'Injection using Botox Shared',isFavourite: false,isSelected: false},
+    {id:2,text:'3RD Molar Extraction',isFavourite: false,isSelected: false},
+    {id:3,text:'Injection using - Siax 200 IU',isFavourite: false,isSelected: false},
+    {id:4,text:'Tattoo removal rejuvi',isFavourite: false,isSelected: false},
+    {id:5,text:'Electric Epilation',isFavourite: false,isSelected: false},
+    {id:6,text:'Electric Epilation',isFavourite: false,isSelected: false},  
   ];
 }

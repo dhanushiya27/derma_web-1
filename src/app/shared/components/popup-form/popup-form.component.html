@@ -30,39 +30,38 @@
                     <div class="outerfield">
                        <div class="formfields" *ngIf="inputFields?.length > 0">
                         <div *ngFor="let field of inputFields; let i = index">
-                            <span class="p-float-label" *ngIf="field.line == 1 && field.type == 'input'">
+                            <span class="commonfloting" *ngIf="field.line == 1 && field.type == 'input'">
                                 <input pInputText [id]="field.name" [name]="field.name"
                                     [formControlName]="field.name" />
-                                <label class="floatlabel" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                                <label class="floatingLable top" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
                             </span>
-                            <span *ngIf="field.line == 1 && field.type == 'calendar'">
-                                <p-calendar [id]="field.name" [showButtonBar]="true"
+                            <span *ngIf="field.line == 1 && field.type == 'calendar'" class="commonfloting">
+                                <label class="floatingLable top">Order Date</label>
+                                <p-calendar class="backgroundimg" [id]="field.name" [showButtonBar]="true"
                                     [formControlName]="field.name"></p-calendar>
                             </span>
-                            <span class="time" *ngIf="field.line == 1 && field.type == 'time'">
-                                <p-calendar [id]="field.name" [timeOnly]="true" timeFormat="HH:mm A" hourFormat="12"
+                            <span class="time" *ngIf="field.line == 1 && field.type == 'time'" class="commonfloting">
+                                <label class="floatingLable top">Order Time</label>
+                                <p-calendar class="backgroundclock" [id]="field.name" [timeOnly]="true" timeFormat="HH:mm A" hourFormat="12"
                                     [showTime]="true" [formControlName]="field.name"></p-calendar>
                             </span>
-                        </div>
-                        
+                        </div>                       
                     </div> 
                     <span class="bin" (click)="remove()">
                             <img [src]="'assets/icons/redBin.svg'" />
                     </span>
                     </div>
-                    
-
                     <div class="formfieldsline2" *ngIf="inputFieldsLine2?.length > 0">
                         <div *ngFor="let field of inputFieldsLine2; let i = index">
-                            <span class="p-float-label" *ngIf="field.line == 2 && field.type == 'input'">
+                            <span class="commonfloting" *ngIf="field.line == 2 && field.type == 'input'">
                                 <input pInputText [id]="field.name" [name]="field.name"
                                     [formControlName]="field.name" />
-                                <label class="floatlabel" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                                <label class="floatingLable top" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
                             </span>
-                            <span class="p-float-label" *ngIf="field.line == 2 && field.type == 'dropdown'">
+                            <span class="commonfloting" *ngIf="field.line == 2 && field.type == 'dropdown'">
                                 <p-dropdown class="dropdownField" [options]="field.option" [formControlName]="field.name"
                                     [placeholder]="field.name" [optionLabel]="field.optionLabel" inputId="float-label" [optionValue]="field.optionValue"></p-dropdown>
-                                <label class="floatlabel" for="float-label">{{field.name}}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                                <label class="floatingLable top" for="float-label">{{field.name}}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
                             </span>
                             <span *ngIf="field.line == 2 && field.type == 'selector'" class="textSelectorContainor">
                                 <span class="textSelector">Requested Prax...</span>

@@ -20,7 +20,7 @@
         align-items: center;
         gap: 20px;
         img.image {
-            max-width: 220px;
+            max-width: 200px;
         }
 
        
@@ -38,7 +38,7 @@
             }
             .p-dropdown.p-component {
                 padding: 0 10px;
-                width: 220px;
+                width: 180px;
             }
 
             .p-dropdown-trigger {
@@ -53,27 +53,28 @@
         }
 
         p-calendar input {
-            width: 160px;
+            width: 150px;
             text-align: left;
-            font-size: $sz-16-font;
+            font-size: $sz-15-font;
             font-family: "Poppins-SemiBold";
             background-image: url('../../../../assets/icons/calender-Icon.svg');
             background-repeat: no-repeat;
-            background-size: 22px;
-            background-position: top 13px right 12px;
+            background-size: 17px;
+            background-position: top 12px right 12px;
             color: $primary-blue-color;
+            padding: 9px 10px;
         }
     }
     h1.outpatients {
-        font-size: $sz-20-font;
+        font-size: $sz-18-font;
         color:$white-color;
     }
     button.btnSec {
-        padding: 7px 30px;
+        padding: 7px 20px;
         background-color: transparent;
         border: 1px solid $white-color;
         border-radius: 4px;
-        font-size: $sz-16-font;
+        font-size: $sz-15-font;
         color: $white-color;
         font-family: "Poppins-Regular";;
         cursor: pointer;

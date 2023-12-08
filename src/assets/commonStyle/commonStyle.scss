@@ -176,10 +176,11 @@ input:-moz-autofill:active {
 }
 
 .tableHeader {
-  font-size: $sz-18-font;
+  font-size: $sz-16-font;
   color: $white-color;
   font-family: "Poppins-SemiBold";
   padding: 10px 15px;
+  text-align: center;
   background-color: transparent;
 }
 
@@ -217,7 +218,7 @@ input:-moz-autofill:active {
 }
 
 .loginsub {
-  font-size: $sz-15-font;
+  font-size: $sz-14-font;
   color: $gray-shade1-color;
   font-family: 'Poppins-Regular';
 }
@@ -230,6 +231,9 @@ input:-moz-autofill:active {
   font-size: $sz-18-font;
   color: $primary-black-color;
   font-family: "Poppins-SemiBold";
+}
+td.tableLable.tablelabletext {
+  text-align: center;
 }
 
 .tabLabelBlack {
@@ -404,14 +408,14 @@ input:-moz-autofill:active {
 
 .floatingLable {
   position: absolute;
-  font-size: $sz-18-font;
+  font-size: $sz-14-font;
   color: $primary-black-color;
   font-family: "Poppins-Medium";
   top: -14px;
   left: 20px;
   background-color: #fff;
   z-index: 99;
-  padding: 0 7px;
+  padding: 0 0px;
 }
 
 

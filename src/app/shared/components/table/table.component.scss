@@ -12,15 +12,22 @@
 .editTableIcon{
     cursor: pointer;
 }
-.actionBtn{
-    background-color: $primary-blue-color;
-    color: $white-color;
-    font-size: $sz-16-font;
-    font-family: "Poppins-Regular";
-    border: none;
-    width: 100px;
-    height: 40px;
-    padding: 10px 12px;
+.actionOtrContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    align-items: center;
+    .actionBtn{
+        background-color: $primary-blue-color;
+        color: $white-color;
+        font-size: $sz-16-font;
+        font-family: "Poppins-Regular";
+        border: none;
+        width: 100px;
+        height: 40px;
+        padding: 10px 12px;
+    }
 }
 
 .medicalDatacolor{

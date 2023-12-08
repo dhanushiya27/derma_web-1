@@ -17,13 +17,21 @@
                 All
             </div>
         </div>
+        <!-- <div class="tabContainer">
+            <div class="action">
+               <app-tabs (tabSelection)="headerChange($event)"   (actionClicked)="actionOrders($event)" [tabDetails]="items" [header]="'orders'"></app-tabs>
+            </div>
+            <div *ngIf="showAdditionalButtons" class="actionOtr">
+              <button pButton type="button"  class="actionBtn"  label="Start Time" ></button>
+              <button pButton type="button"  class="actionBtn"  label="Revoke Order" (click)="showAlert('','add')"></button>
+           </div>
+        </div> -->
         <div class="tabContainer">
-            <app-tabs (tabSelection)="headerChange($event)"  (actionClicked)="actionOrders(procedures)" [tabDetails]="items" [header]="'orders'"></app-tabs>
-        <div *ngIf="showAdditionalButtons" class="actionOtr">
-            <!-- Additional buttons go here -->
-            <button pButton type="button"  class="actionBtn"  label="Start Time" ></button>
-            <button pButton type="button"  class="actionBtn"  label="Revoke Order" (click)="showAlert('','add')"></button>
-        </div>
+            <app-tabs  (tabSelection)="headerChange($event)"  (actionClicked)="actionOrders(procedures)" [tabDetails]="items" [header]="'orders'"></app-tabs>
+                <div *ngIf="showAdditionalButtons" class="actionOtr">
+                    <button pButton type="button"  class="actionBtn"  label="Start Time" ></button>
+                    <button pButton type="button"  class="actionBtn"  label="Revoke Order" (click)="showAlert('','add')"></button>
+                </div>
         </div>
     </div>
     <div *ngIf="addFlag == true">

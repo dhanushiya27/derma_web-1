@@ -36,7 +36,5 @@ export class TabsComponent {
   }
   actionBtn(event:any){
     this.actionClicked.emit(event);
-    console.log("hiii");
-    console.log(event);  
   }
 }

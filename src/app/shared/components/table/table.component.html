@@ -53,7 +53,9 @@
           (click)="edit(rowData)" />
           <img *ngIf="col.field =='action' && rowData[col.field] =='report'" src="assets/icons/reportIcon.png" (click)="report(rowData)"/>
           <img *ngIf="col.field =='action' && rowData[col.field] =='none'" src="assets/icons/orderTableNoAction.svg" (click)="report(rowData)"/>
-          <button pButton type="button" *ngIf="col.field =='action' && rowData[col.field] =='Action'" class="actionBtn" (click)="clickAction($event)" label="Actions" ></button>
+          <div class="actionOtrContainer" >
+            <button pButton type="button" *ngIf="col.field =='action' && rowData[col.field] =='Action'" class="actionBtn" (click)="clickAction($event,rowData)" label="Actions" ></button>
+          </div>
       </td>
     </ng-container>
     </tr>

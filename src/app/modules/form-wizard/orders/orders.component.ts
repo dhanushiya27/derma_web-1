@@ -205,22 +205,19 @@ export class OrdersComponent {
         }
 
     }
-    actionOrders(procedures: any) {
-        console.log('Clicked procedure:', procedures);
+    actionOrders(event: any) {
         this.showAdditionalButtons = !this.showAdditionalButtons;
-            // let procedureDetails = {
-            //   "Id":  procedures.ProcedureID,
-            //   "Name": procedures.ProcedureName,
-            //   "Practitioner": procedures.RequestedPractitioner,
-            //   "Date": procedures.Date,
-            //   "Time": procedures.Time,
-            //   "Status": procedures.status,
-            // };
-            // console.log(procedureDetails, 'procedureDetails');
-      }
-      handleActionClick(procedure: any) {
-        this.actionOrders(procedure);
-      }
+        console.log("statusss:",event.status);
+         let procedureDetails = {
+              "Id": event.ProcedureID,
+              "Name": event.ProcedureName,
+              "Practitioner": event.RequestedPractitioner,
+              "Date": event.Date,
+              "Time": event.Time,
+              "Status": event.status,
+            };
+            console.log(procedureDetails, 'procedureDetails');
+    }
       alertMessage: any[] = [
         {
           id: '1',
@@ -259,9 +256,7 @@ export class OrdersComponent {
         },
       ];
       alertRevokeMessage: any = [{ name: 'Are you sure you want to Revoke ?' }];
-      showAlert(data: any, type: any) {
-        console.log('Before status update:', this.procedures[0].status);
-         
+      showAlert(data: any, type: any) { 
         const ref = this.dialogService.open(ModelComponent, {
           header: 'Alert',
           width: '50%',
@@ -277,9 +272,10 @@ export class OrdersComponent {
           },
         });
         ref.onClose.subscribe((result: any) => {
+            this.showAdditionalButtons = false;
             console.log('Dialog closed with result:', result);
-            this.procedures[0].status = 'Revoked';
-            console.log('After status update:', this.procedures[0].status);  
+            this.procedures.status == 'Revoked';
+            // console.log('After status update:', this.procedures.status);
             });
       }
 }
