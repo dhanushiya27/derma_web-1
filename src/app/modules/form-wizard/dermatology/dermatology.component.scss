@@ -1,0 +1,95 @@
+@import "./../../../../assets/theme/theme-variable.scss";
+
+
+form.form {
+    width: 100%;
+
+    .headerSec {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+
+        .dermaBtnOuter {
+            display: flex;
+            padding: 0 0px;
+            gap: 15px;
+        }
+    }
+}
+
+::ng-deep {
+    .mainContainer {
+        .dermatologyTab {
+            .p-tabview-nav-container {
+                li.p-tabview-ink-bar {
+                    display: none;
+                }
+
+                .p-tabview-nav li {
+                    padding: 13px 10px;
+                    margin: 10px 30px;
+                    width: 170px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+
+                    .p-tabview-nav-link {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .vita {
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .p-tabview-nav li.p-highlight {
+                    background-color: $primary-blue-color;
+
+                    .tabheader {
+                        color: $white-color;
+                    }
+                }
+
+
+            }
+
+            .innerContainer {
+                padding: 30px 30px;
+            }
+        }
+    }
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li.p-highlight:first-child {
+        margin-left: 30px !important;
+    }
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li:first-child {
+        margin-left: 30px !important;
+    }
+}
+
+
+
+::ng-deep {
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li img.centeredImage.blackimg {
+        display: block !important;
+    }
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li img.centeredImage.whiteimg {
+        display: none !important;
+    }
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li.p-highlight img.centeredImage.blackimg {
+        display: none !important;
+    }
+
+    .mainContainer .dermatologyTab .p-tabview-nav-container .p-tabview-nav li.p-highlight img.centeredImage.whiteimg {
+        display: block !important;
+    }
+
+
+}

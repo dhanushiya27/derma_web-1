@@ -1,0 +1,35 @@
+
+<div class="formSec">
+<form class="form" [formGroup]="DermatologyForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+<h2 class="commonHeader">Cancel Documentation</h2>
+<div class="toggleBtnOtr">
+</div>
+<div class="innerSecForm">
+    <h3 class="formHeader"> Medication History <img src="assets/icons/refresh-icon.svg" alt="Save"></h3>
+    <p-radioButton
+    inputId="yourRadioButton"
+    name="isChecked"
+    formControlName="isChecked"
+    (click)="toggleCheckbox()"
+    label="Not Specified" 
+    [style.backgroundImage]="isChecked ? 'url(../../../../../assets/icons/radiobtnTick.svg)' : 'none'"
+    [style.backgroundRepeat]="isChecked ? 'no-repeat' : ''"
+    [style.backgroundPosition]="isChecked ? 'top 7px right 20px' : ''"
+    [style.backgroundSize]="isChecked ? '25px' : ''"
+  ></p-radioButton>
+
+  <!-- <p-dropdown  class="dropdownFloating" [options]="cities"  formControlName="pastmedicalhistroy" appendTo="body" optionValue="code" optionLabel="name"></p-dropdown> -->
+
+</div>
+
+<div class="radioInnerSecForm">
+
+  <h3 class="formHeader"> Facial cleansing <img src="assets/icons/refresh-icon.svg" alt="Save"></h3>
+
+  <div class="radioBtnSec">
+    <p-radioButton name="selectedValue" value="val1"   label="Yes" formControlName="selectedValue"></p-radioButton> 
+    <p-radioButton name="selectedValue" value="val2"   label="No"formControlName="selectedValue"></p-radioButton> 
+  </div>
+  </div>
+
+</form>

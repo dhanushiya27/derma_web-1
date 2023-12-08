@@ -1,0 +1,83 @@
+@import "./../../../../assets/theme/theme-variable.scss";
+
+form.form {
+    width: 100%;
+
+    .headerSec {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 30px;
+
+        .fractionalBtnOuter {
+            display: flex;
+            padding: 0 0px;
+            gap: 15px;
+        }
+    }
+}
+
+::ng-deep {
+    .mainContainer {
+        .fractionalTab {
+            .p-tabview-nav-container {
+                li.p-tabview-ink-bar {
+                    display: none;
+                }
+                .p-tabview-nav li {
+                    padding: 5px 0px;
+                    width: 180px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    .p-tabview-nav-link {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .tabOtr {
+                        height:40px;
+                        width:40px;
+                        margin: 10px 0px;
+                        .tabIcon{
+                            height:100%;
+                            width:100%;
+                        }
+                    }
+                    .tabText{
+                        font-family: 'Poppins-Regular';
+                        color:$primary-black-color;
+                        font-size: $sz-14-font;
+                        margin-bottom: 5px;
+                    }
+                }
+                .activeImage{
+                    display: none;
+                }
+                .p-tabview-nav li.p-highlight {
+                    background-color: $primary-blue-color;
+                    .tabText {
+                        color: $white-color;
+                    }
+                    .activeImage {
+                        display: block;
+                    }
+                    .inActiveImage{
+                        display: none;
+                    }
+                }
+            }
+            .innerContainer {
+                padding: 30px 30px;
+            }
+            .p-tabview-nav-content {
+                width: 100%;
+            }
+            ul.p-tabview-nav {
+                width: 100%;
+                justify-content: space-evenly;
+            }
+        }
+    }
+    
+}

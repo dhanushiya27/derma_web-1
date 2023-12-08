@@ -1,0 +1,83 @@
+@use '../../../../../assets/commonStyle' as *;
+
+.parentTableData{
+        width: 100%;
+        justify-content: space-between;
+        height: 100px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        display: grid;
+        box-shadow: 0 6px 4px -2px $gray-border1-color;
+
+    .data{
+        width: auto;
+        display: inline;
+        .statusTitle{
+            margin-left: 20px;
+            color: $black-color;
+        }
+        span{
+            color: $primary-blue-color; 
+        }
+    }
+}
+.addOrEdit{    
+.addOrEditForm{
+    .otrDiv{
+        display:flex;
+        padding: 0 50px;
+        .div1{
+            width: 50%;
+            .dropdownfloting{
+                margin: 60px;
+            }
+        }
+        .div2{
+            width: 50%;
+            .commonfloting{
+                margin: 60px;
+                position: relative;
+                
+                ::ng-deep{
+                    span.p-calendar{
+                        width: 100%;
+
+                    }
+                    p-calendar.backgroundimg input.p-inputtext{
+                        background-image: url(../../../../../assets/icons/calendarBlue.svg);
+                        background-repeat: no-repeat;
+                        background-size: 20px;
+                        background-position: right 14px top 13px;
+                        width: 100%;
+                        border: 1px solid #B7B7B7 !important;
+                        padding: 10px 30px;
+                        border-radius: 10px;
+                        font-size: 18px;
+                        color: #1E1D1D;
+                        font-family: "Poppins-Medium";
+                        width: 100%;
+                        resize: none;
+                    }
+                }
+                .backgroundimg{
+                    .delete-icon {
+                        position: absolute;
+                        top: 50%;
+                        right: 8px; 
+                        transform: translateY(-50%);
+                        cursor: pointer;
+                      }
+                }
+            }
+
+        }
+        
+    }
+    .margin {
+        margin: 53px;
+        width: 92%;
+        padding: 0 43px;
+    }
+}
+
+}
+

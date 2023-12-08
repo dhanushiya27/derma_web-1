@@ -1,0 +1,180 @@
+@use '../../../../assets/commonStyle/commonStyle.scss' as *;
+@use '../../../../assets/theme/theme-variable.scss' as *;
+ 
+.patientInfoHeader {
+    background-color: $primary-blue-color;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    .patientInfoHeadertext{
+        color: $white-color;
+        // margin-left: 10px;
+        font-family: 'Poppins-Medium';
+    }
+    .divrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+}
+
+.detailsOtr{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    padding: 0 50px;
+    .leftsideCard{
+        width: 50%;
+        margin-right: 20px;
+        border: 1px solid $input-border-color;
+        box-shadow: 0 6px 4px -2px $gray-border1-color;
+        border-radius: 20px; 
+        display: flex;
+        .imgDetails{
+            width: 30%;
+        }   
+        .selectedDataDetails{
+            width: 60%;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            .name{
+                color: $primary-blue-color;
+                margin-top: 3px;
+                margin-bottom: 5px;
+            }
+            h4,p{
+                margin-top: 3px;
+                margin-bottom: 5px;
+            }
+            span{
+                color:$primary-blue-color;
+                font-family: 'Poppins-Medium';
+                
+            }
+            
+            .icons{
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+                .location{
+                    display: flex;
+                    p{
+                        color: $primary-blue-color;
+                        margin-top: 10px;
+                    }
+
+                }
+                
+            }
+        }
+    }
+    .rightSideCard{
+        width:40%;
+        .headerIcon{
+            width: 100%;
+            height: auto;
+            border: 1px solid $input-border-color;
+            box-shadow: 0 6px 4px -2px $gray-border1-color;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            .icons{
+                display: flex;
+                align-items: center;
+                padding: 16px;
+                margin: 7px;
+                justify-content: space-around;
+            }
+        }
+        .bottomIcon{
+            width: 100%;
+            height: auto;
+            border: 1px solid $input-border-color;
+            box-shadow: 0 6px 4px -2px $gray-border1-color;
+            border-radius: 20px;
+            .iconsOtr{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                margin-top: 2px;
+                margin-bottom: 2px;
+                .icons{
+                    margin: 14px;
+                    display: flex;
+                    padding: 17px 34px;
+                    border: 1px solid $primary-blue-color;
+                    h4{
+                        margin-left: 10px;
+                        margin-top: 5px;
+                        color: $primary-blue-color;
+                    }
+                }
+            }
+
+        }
+        
+    }
+
+}
+
+.commentsOtr{
+    width: 100%;
+    height: auto;
+    padding: 0 50px;
+    .commentInner{
+        padding: 25px;
+        margin-top: 25px;
+        // margin: 15px;
+        border: 1px solid $input-border-color;
+        border-radius: 20px;
+        .comments{
+            display: flex;
+            .margin{
+                width: 90%;
+            }
+            .sendMessage{
+                width: 10%;
+                padding: 38px;
+                margin-top: 34px;
+            }
+
+        }
+        .commentSection{
+            display: block;
+            h4{
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                color: $primary-blue-color;
+            }
+            .commentsCard{
+                padding: 25px;
+                width: 100%;
+                border: 1px solid $input-border-color;
+                border-radius: 20px;
+                height: 100px;
+                margin-bottom: 20px;
+                box-shadow: 0 6px 4px -2px $gray-border1-color;
+                white-space: pre-wrap;
+                .header{
+                    display: flex;
+                    margin-left: 10px;
+                    h4{
+                        color: $primary-blue-color;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        margin-top: 0px;
+                    }
+                    img {
+                        margin-top: -16px;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,163 @@
+<p>sample-ui works!</p>
+
+<div Class="HeaderAlignment">
+  <div class="margin">
+    <p>Header label text design</p>
+  </div>
+  <div class="margin">
+    <h1 class="loginTitle">Login to your account</h1>
+  </div>
+  <div class="margin">
+    <h2 class="commonHeader">Dermatology General Form</h2>
+  </div>
+  <div class="margin">
+    <p class="tabheader">tabheader</p>
+  </div>
+  <div class="margin">
+    <h3 class="formHeader"> Medication History <img src="assets/icons/refresh-icon.svg" alt="Save"></h3>
+  </div>
+  <div class="margin">
+    <div class="appoinmentDocName"><img src="assets/icons/Doctor.svg" alt="Save"> <label>Abbas Yassin</label></div>
+  </div>
+
+</div>
+
+<div class="button Alignment">
+  <div class="margin"> <button pButton type="button" class="commomBtn" label="Click"> <img src="assets/icons/home.svg"
+        alt="Save"></button></div>
+  <div class="margin"> <button pButton type="button" class="commomBtnYes" label="Yes"></button> </div>
+  <div class="margin"> <button pButton type="button" class="commomBtnNo" label="No"></button> </div>
+  <div class="margin"> <button pButton type="button" class="AppoinmentBtn" label="New Encounter"></button> </div>
+  <div class="margin">
+    <div class="active">Active</div>
+  </div>
+  <div class="margin">
+    <div class="removed">Removed</div>
+  </div>
+  <div class="margin">
+    <div class="inactive">Inactive</div>
+  </div>
+</div>
+
+
+<div class="CommonLableAlignment">
+  <div class="margin"> <label class="commonLabel">Not Specified</label> </div>
+  <div class="margin">
+    <h2 class="commonLabel">Patient Name : <span class="commonLabelThin"> Ahmad Al Mazyd : Vitals </span></h2>
+  </div>
+  <div class="margin">
+    <h2 class="secondaryLabel">1 = Primary Family (Father, Mother, Brother, Sister) 2 = Any Other Family Relative</h2>
+  </div>
+  <div class="margin"> <span class="headerprofiletitle">Name:</span> </div>
+  <div class="margin"> <span class="headerprofileLable">Ahmad Al Mazyd,</span> </div>
+  <div class="margin">
+    <p class="AppoinmentVisiterName">Ahmad Al Mazyd </p>
+  </div>
+  <div class="margin">
+    <p class="AppoinmentSchuduleTime">Follow-Up 10 - 10 mins</p>
+  </div>
+</div>
+
+<div class="CommonformDesin">
+  <!-- normal Input -->
+  <div class="margin"> <input type="text" pInputText class="commonInput" /> </div>
+
+  <!-- Floting input -->
+  <div class="margin">
+    <div class="commonfloting">
+      <label class="floatingLable">Destination</label>
+      <input type="text" pInputText class="commonInput" />
+    </div>
+  </div>
+
+  <!-- Floting number input -->
+  <div class="margin">
+    <div class="commonfloting">
+      <label class="floatingLable">Body Temperature</label>
+      <input type="number" pInputText class="commonInput" />
+    </div>
+  </div>
+
+  <!--floating dropdown  -->
+  <div class="margin">
+    <div class="dropdownfloting">
+      <label class="floatingLable">Reflexes</label>
+      <p-dropdown class="dropdownFloating" [options]="cities" [(ngModel)]="selectedCity" appendTo="body"
+        optionValue="code" optionLabel="name"></p-dropdown>
+    </div>
+  </div>
+  <!--floating textarea -->
+  <div class="margin">
+    <div class="textareafloting">
+      <label class="floatingLable">Notes</label>
+      <textarea class="commontextArea" pInputTextarea placeholder="Notes"></textarea>
+    </div>
+  </div>
+
+  <div class="margin">
+    <textarea class="commontextArea" pInputTextarea placeholder="Notes"></textarea>
+  </div>
+  <!-- Radio Button -->
+  <!-- <p-radioButton name="groupname" value="val1" label="Yes" [(ngModel)]="selectedValue"></p-radioButton> -->
+
+  <div class="margin"> <p-radioButton name="groupname" value="val1" label="Yes"
+      [(ngModel)]="selectedValue"></p-radioButton> </div>
+  <div class="margin"> <p-radioButton name="groupname" value="val2" label="No"
+      [(ngModel)]="selectedValue"></p-radioButton> </div>
+
+
+  <!-- Rounded Radio button -->
+  <div class="margin"> <p-radioButton class="rounded" name="groupname" value="val1"
+      [(ngModel)]="roundedValue"></p-radioButton> </div>
+  <div class="margin"> <p-radioButton class="rounded" name="groupname" value="val2"
+      [(ngModel)]="roundedValue"></p-radioButton> </div>
+
+
+  <div class="margin"> <p-checkbox class="rounded" name="selectedValue" value="Yes" label="Yes"
+      formControlName="selectedValue"></p-checkbox> </div>
+  <div class="margin"> <p-checkbox class="rounded" name="selectedValue" value="No" label="No"
+      formControlName="selectedValue"></p-checkbox> </div>
+
+  <!-- Toggle Button design -->
+  <!-- <div class="ggg">
+ <p-toggleButton onLabel="Iconfirm" offLabel="I reject" 
+            onIcon="pi pi-check" offIcon="pi pi-times" iconPos="right" [(ngModel)]="checked2"></p-toggleButton> 
+
+
+            <div class="toggle-container" [class.active]="isActive" (click)="toggle()">
+                <div class="toggle-handle"></div>
+              </div>
+              <div class="toggle-label">
+                <span [hidden]="isActive">No</span>
+                <span [hidden]="!isActive">Yes</span>
+              </div>
+
+       </div> -->
+
+</div>
+
+
+<p-table [value]="product" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr class="tableHeaderOtr">
+      <th class="tableHeader">Appointment Name</th>
+      <th class="tableHeader">Ordered By</th>
+      <th class="tableHeader">Requested Practitioner</th>
+      <th class="tableHeader">Ordrered Date</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td class="tabLabelGray">{{ product.code }}</td>
+      <td class="tabLabelGray">{{ product.name }}</td>
+      <td class="tabLabelGray">{{ product.category }}</td>
+      <td class="tabLabelGray">{{ product.quantity }}</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+
+
+<div class="formCardOuter">
+
+</div>

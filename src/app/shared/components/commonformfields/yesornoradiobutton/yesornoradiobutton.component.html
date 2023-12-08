@@ -1,0 +1,13 @@
+<div class="formSec">
+    <form class="form" [formGroup]="yesornoRadioBtn" #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="radioInnerSecForm">
+            <h3 class="formHeader"> {{sectionTitle}} <img src="assets/icons/refresh-icon.svg" alt="Save"></h3>
+            <div class="radioBtnSec">
+                <p-radioButton name="selectedValue" value="Yes" label="Yes" formControlName="selectedValue"
+                    (click)="radioCheck($event)"></p-radioButton>
+                <p-radioButton name="selectedValue" value="No" label="No" formControlName="selectedValue"
+                    (click)="radioCheck($event)"></p-radioButton>
+            </div>
+        </div>
+    </form>
+</div>

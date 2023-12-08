@@ -1,0 +1,124 @@
+<!-- Developer Name : Varsha 
+Module Name: Chart -->
+
+<div class="mainContainer">
+    <div class="btnContainer">
+        <div class="btnOtr"> 
+            <p-button type="button" class="submitBtn">
+                <img class="btnIcon" src="assets/icons/saveicon.svg" >Save Charts
+            </p-button>
+        </div>
+    </div>
+    <div class="chartOtrContainer">
+        <div class="chartContainer">
+           <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/temperature-blue.svg">
+                        <p class="chartText">Temperature</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Temperature</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="tempData" [options]="tempOptions"></p-chart>
+           </div>
+           <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/heartRate-blue.svg">
+                        <p class="chartText">Heart Rate</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Heart Rate</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="heartData" [options]="heartOptions"></p-chart>
+           </div>
+            <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/BP-blue.svg">
+                        <p class="chartText">Blood Pressure</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Systolic</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage2"></p>
+                        <p class="titleText">Diastolic</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="pressureData" [options]="pressureOptions"></p-chart>
+           </div>
+            <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/bloodGlucose-blue.svg">
+                        <p class="chartText">Blood Glucose</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Blood Glucose</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="glucoseData" [options]="glucoseOptions"></p-chart>
+           </div>
+            <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/height-blue.svg">
+                        <p class="chartText">Height</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Height</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="heightData" [options]="heightOptions"></p-chart>
+           </div>
+           <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/weight-blue.svg">
+                        <p class="chartText">Weight</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Weight</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="weightData" [options]="weightOptions"></p-chart>
+           </div>
+           <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/BMI-blue.svg">
+                        <p class="chartText">BMI</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">BMI</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="bmiData" [options]="bmiOptions"></p-chart>
+           </div>
+           <div class="chartContainerInner">
+                <div class="chartInnerImageOtr">
+                    <div class="chartInnerImage">
+                        <img class="chartImage" src="assets/icons/BOS-blue.svg">
+                        <p class="chartText">Blood Oxygen Saturation Level (Spo2)</p>
+                    </div>
+                    <div class="chartInnerImage">
+                        <p class="titleImage1"></p>
+                        <p class="titleText">Blood Oxygen Saturation Level (Spo2)</p>
+                    </div>
+                </div>
+                <p-chart type="line" [data]="bosData" [options]="bosOptions"></p-chart>
+           </div>  
+        </div>
+    </div>
+</div>

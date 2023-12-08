@@ -1,0 +1,143 @@
+@use '../../../../../assets/commonStyle' as *;
+
+.problemsAdd{
+    .titleBar{
+        width: auto;
+        display: flex;
+        height: 85px;
+        padding: 25px;
+        background:$white-shade1-color ;
+        box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+        img{
+            width: 21px;
+            height: 17px;
+            margin-top: 6px;
+            margin-right: 8px;
+        }
+        .tabheader {
+            font-size: 18px;
+            color: #1E1D1D;
+            font-family: "Poppins-SemiBold";
+        }
+       
+    }
+    
+    .formOtr{
+        display: flex;
+        .mcListTable{
+            width: 40%;
+            height: auto;
+        }
+        .newProblemOtrDiv{
+            width: 60%;
+            padding: 0 25px 10px 0px;
+        }
+        .newProblemOtr{
+            // display: inline;
+            width: 100%;
+        .newProblem{
+            width: 100%;
+            margin: 0 0 30px 0;
+            height: 20px;
+            box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+            height:200px;
+            border-radius: 20px;
+            .nbtitleBar{
+                width: auto;
+                display: flex;
+                justify-content: space-between;
+                height: 85px;
+                padding: 25px;
+                img{
+                    width: 21px;
+                    height: 17px;
+                    margin-top: 6px;
+                    margin-right: 8px;
+                }
+                .tabheader {
+                    font-size: 18px;
+                    color: #1E1D1D;
+                    font-family: "Poppins-SemiBold";
+                }
+               
+            }
+            .formOtr{
+                width: 79%;
+                gap: 30px;
+                margin: 20px;
+                .delImg{
+                    margin-top: 23px;
+                }
+                ::ng-deep .dropdownfloting{
+                    position: relative;
+                    margin-top: 15px;
+                    width: 216px;
+                }
+            }
+        }
+        .medicalCodeTable {
+            margin-top: 42px;
+            width: 76%;
+            border-radius: 18px;
+            margin-bottom: 42px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .pList{
+                margin-bottom: 15px;
+                .problemsList {
+                    display: flex;
+                    gap: 10px;
+                    margin-bottom: 25px;
+                    .img{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            
+        }
+    }
+        }
+}
+
+::ng-deep{
+    .p-datatable>.p-datatable-wrapper {
+        overflow: auto;
+        border-radius: 30px;
+        box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        text-align: left;
+        /* border: 1px solid #dee2e6; */
+        border-width: 0 0 1px 0;
+        padding: 1rem 1rem;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        text-align: left;
+        border: 1px solid $white-color;
+        border-width: 0 0 1px 0;
+        padding: 1rem 1rem;
+    }
+    p-calendar.backgroundimg input.p-inputtext{
+        background-image: url(../../../../../assets/icons/calendarBlue.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: right 14px top 13px;
+    }
+        .problemsList {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            gap: 10px;
+            
+        }
+    
+}
+
+img{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}

@@ -1,0 +1,97 @@
+<div class="patientInfoHeader">
+    <div class="divrow"><p class="patientInfoHeadertext">Ahmad Al Mazyd : Healthcare Timeline</p></div>
+    <img src="../../../../assets/icons/xmarkWhite.svg" (click)="navToAllappointments()">
+</div>
+
+<div class="detailsOtr">
+    <div class="leftsideCard">
+        <div class="imgDetails">
+            <img src="" alt="">
+        </div>
+        <div class="selectedDataDetails">
+            <h4 class="name">{{selectedData.profDescNameE}}Ahmad Al Mazyd</h4>
+            <h4>{{selectedData.profDescNameA}}لمزيداحمد المزيد</h4>
+            <p>Speaks عربي,Lives in Riyadh ,Saudi Arabia</p>
+            <p>Patient Id : <span>PAT - 564754</span> </p>
+            <p>Passport : <span>1234567890</span></p>
+            <p>Date Of Birth : <span> 1987-05-03</span> </p>
+            <p>You can contact him through :</p>
+            <div class="icons">
+                <div>
+                    <img src="assets/icons/mailIcon.svg"></div>
+                <div class="location">
+                    <img src="assets/icons/location.svg"><p> Location</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="rightSideCard">
+        <div class="headerIcon">
+            <div class="icons">
+                <img src="assets/icons/medicalBlueIcn.svg">
+                <img src="assets/icons/problemsIcnBlue.svg">
+                <img src="assets/icons/vitalsIcnBlue.svg">
+                <img src="assets/icons/checkedMedicalIcn.svg" (click)="appoinmentsDetails()">
+                <img src="assets/icons/pinnedIcnBlue.svg">
+            </div>
+        </div>
+        
+        <div class="bottomIcon">
+            <div class="iconsOtr">
+                <div class="icons">
+                    <img src="assets/icons/emptyCalendar.svg">
+                    <h4>55</h4>
+                </div>
+                <div class="icons">
+                    <img src="assets/icons/calendarTick.svg">
+                    <h4>39</h4>
+                </div>
+                <div class="icons">
+                    <img src="assets/icons/calendarXmarkIcon.svg">
+                    <h4>6</h4>
+                </div>
+                <div class="icons">
+                    <img src="assets/icons/calendarBlue.svg">
+                    <h4>8</h4>
+                </div>
+                <div class="icons">
+                    <img src="assets/icons/srBlueIcon.svg">
+                    <h4>0</h4>
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="commentsOtr">
+    <div class="commentInner">
+        <div class="comments">
+            <div class="margin"> 
+                <textarea [(ngModel)]="typedComment" class="commontextArea" pInputTextarea placeholder="Type here..."></textarea>
+            </div>
+            <div class="sendMessage">
+                <img src="assets/icons/sendMessageIcn.svg" (click)="addComment()" >
+            </div>
+        </div>
+        <div class="commentSection">
+            <h4>Comments</h4>
+            <div class="commentsCard" *ngFor="let comment of comments">
+                <div class="header">
+                    <img src="assets/icons/userBlueIcn.svg">
+                    <h4>User</h4>
+                    <p>date</p>
+                    <p>Time</p>
+
+                </div>
+                <p>{{ comment }}</p>
+                
+
+            </div>
+        </div>
+    </div>
+   
+</div>

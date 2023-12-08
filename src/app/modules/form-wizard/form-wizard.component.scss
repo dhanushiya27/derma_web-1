@@ -1,0 +1,111 @@
+@use '../../../assets/commonStyle/' as *;
+
+::ng-deep {
+
+  .formWizard {
+    margin: 50px 100px;
+
+
+    .wizardBg {
+      display: flex;
+      align-items: center;
+      min-width: 231px;
+      height: 100px;
+      position: relative;
+    }
+
+    .wizardCircle {
+      background: $blue-shade4-color;
+      width: 88px;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px;
+      border-left: 1px solid $white-color;
+      /* Add a left border directly to the circle */
+      position: absolute;
+      z-index: 2;
+      // margin-left: -20px;
+    }
+
+    .header {
+      color: $white-color;
+      display: flex;
+      align-items: center;
+      background-color: $blue-shade4-color;
+      height: 70px;
+      padding: 0px 20px;
+      position: absolute !important;
+      left: 70px;
+      width: 158px;
+      z-index: 1;
+    }
+
+    .wizardCircle vital {
+      margin-left: 0 !important;
+    }
+  }
+
+  .formWizard .p-tabview p-component {
+    background-color: $white-shade1-color;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    padding: 0px !important;
+    border: none !important;
+    // position: relative;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav {
+    border: none !important;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav li,
+  .formWizard .p-tabview .p-tabview-nav li.p-highlight {
+    margin-left: -20px;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav li:first-child,
+  .formWizard .p-tabview .p-tabview-nav li.p-highlight:first-child {
+    margin-left: 0px !important;
+  }
+
+  .header.last {
+    // border:1px solid red;
+    border-radius: 0px 30px 30px 0px;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background-color: transparent;
+    transition: none !important;
+    box-shadow: none !important;
+  }
+
+  .formWizard .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+
+    .wizardCircle,
+    .header {
+      background-color: $primary-blue-color;
+      position: absolute;
+    }
+  }
+
+  .formWizard .p-tabview-nav-container {
+    border: 1px solid $gray-border3-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0 6px 4px -2px #C6C8CA;
+    overflow-x: auto;
+  }
+
+  //for lengthy text mediacal form increase tab size 
+  .wizardBg.MLTF {
+    .header.last{
+      width: 200px !important;
+    }    
+  }
+}

@@ -1,0 +1,119 @@
+@use "../../../../assets/commonStyle" as *;
+
+p.popupEpisode {
+    margin-left: 8px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $primary-black-color;
+    font-family: "Poppins-Regular";
+}
+.alertPopupMessage {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    column-gap: 15px;
+    padding-left: 14px;
+    border-bottom: 1px solid black;
+}
+
+.twoEpisodeDroupform.ng-star-inserted {
+    margin-left: 28px;
+}
+
+.alertPopup {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Poppins-Regular";
+    color: black;
+    margin-top: 3px;
+}
+
+// revoke message alert
+.alertRevokeMessage.ng-star-inserted {
+    margin: 12px 0px 26px 0px;
+    text-align: center;
+}
+.alertPopupButton.margin {
+    display: flex;
+    column-gap: 13px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.alertPopup.selected {
+    color: #1e57ac;
+}
+.alertPopupButton.margin.ng-star-inserted {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    padding: 0px 0px 20px 0px;
+}
+
+
+::ng-deep {
+    p-radiobutton .p-radiobutton .p-radiobutton-box {
+        // width: 100%;
+        // border-radius: 0;
+        // padding: 13px 10px;
+        border: 1px solid #ffffff !important;
+        // padding: 8px 18px;
+        // border-radius: 10px;
+        // position: relative;
+        // height: 40px;
+    }
+    p-radiobutton.rounded .p-radiobutton.p-radiobutton-checked .p-radiobutton-box {
+        background-color: #ffffff !important;
+        background-image: url(../../../../assets/icons/blueTick.png);
+        background-repeat: no-repeat;
+        background-position: top 7px right 6px;
+        background-size: 15px;
+        border: 1px solid #ffffff !important;
+    }
+    .p-dialog .p-dialog-header {
+        border-bottom: 0 none;
+        background-color: #1855b0;
+        color: #fff;
+        padding: 15px 25px 15px 25px;
+        border-top-right-radius: 16px;
+        border-top-left-radius: 16px;
+    }
+    svg.p-dialog-header-close-icon.p-icon {
+        color: white;
+        width: 62px;
+        height: 22px;
+    }
+    .p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+        background: none;
+    }
+    span#pn_id_3_header_title {
+        font-size: 20px;
+        font-family: "poppins-regular";
+    }
+    element.style {
+        max-height: 400px;
+        overflow: auto;
+    }
+    .p-dialog .p-dialog-content:last-of-type {
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+    }
+    .p-dialog .p-dialog-content {
+        background: #ffffff;
+        color: #495057;
+        padding-top: 10px;
+        // margin-top: 10px;
+    }
+    .p-dialog {
+        border-radius: 14px;
+        // box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        border: 0 none;
+    }
+    .p-dialog .p-dialog-content {
+        background: #ffffff;
+        color: #495057;
+        padding: 10px 0px 0px 0px;
+    }
+}

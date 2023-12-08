@@ -1,0 +1,71 @@
+<!-- Developer Name : selva
+Module Name: Problems -->
+
+<!-- Problems Header -->
+<div class="problems" > 
+    <div class="titleBar" *ngIf="currentPage=='view'">
+        <p class="tabheader">Problems</p>
+    </div>
+<!-- Problems Home Page -->
+
+    <div class="problemsOtr" *ngIf="currentPage == 'view'"  >
+        <div class="searchBar" >
+            <img src="assets/icons/searchIconDark.svg" (click)="navigateToViewProblems()" >
+            <div class="problemsList"  (click)="toggleProblemsList()">
+                <h2>Problems List</h2>
+                <img src="assets/icons/{{ isProblemsListVisible ? 'expandDown':'upArrow'  }}.svg" alt="">
+            </div>
+        </div>
+        <div class="medicalCodeTable">
+            <div class="p-field" [@expandCollapse]="isProblemsListVisible ? 'expanded' : 'collapsed'" >
+                <app-problems-list (onEdit)="showEditPage($event)"  [@expandCollapse]="isProblemsListVisible ? 'expanded' : 'collapsed'"></app-problems-list>
+            </div>
+        </div>
+    </div>    
+</div>
+
+<!-- View Problems -->
+<div class="problems" *ngIf="currentPage == 'search'">
+    <div class="titleBar">
+        <img src="assets/icons/leftArrow.svg" alt="" (click)="problemsPage()" >
+        <p class="tabheader">Problems</p>
+    </div> 
+    <div class="searchbarOtr">
+        <div class="searchBar">
+            <img src="assets/icons/problemBack.svg" (click)="backToproblems()" >
+            <!-- <div class="problemsList" (click)="toggleProblemsList()">
+                <h2> New Problem</h2>
+                <img src="assets/icons/{{ isProblemsListVisible ? 'expandDown':'upArrow'  }}.svg" alt="">
+            </div> -->
+        </div>
+    </div>
+    <app-view-problems></app-view-problems>
+    
+
+</div>
+
+<!-- add or edit Problems -->
+
+<div class="editPage" *ngIf="currentPage=='edit'">
+    <div class="headerOtr">
+        <div class="titleBar">
+            <div class="titleOtr">
+                <img src="assets/icons/leftArrow.svg"  (click)="problemsPage()">
+                <p class="tabheader">Problems</p>
+            </div>
+
+            <div class="margin"> <button pButton type="button"  class="commomBtn"  (click)="onUpdate()">
+                <img src="assets/icons/saveicon.svg" >Update</button>
+            </div>
+        </div>
+
+        <div *ngIf="currentPage == 'edit'">
+            <app-add-edit-problems ></app-add-edit-problems>
+        </div>
+    </div>
+
+
+
+</div>
+
+

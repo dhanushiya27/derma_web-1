@@ -1,0 +1,209 @@
+@import "../../../assets/theme/theme-variable.scss";
+
+
+.cardOtr{
+    width: auto;
+    height: auto;
+    margin:20px;
+    border-radius: 20px;
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .detailsCard{
+        width: auto;
+        height: 315px;
+        margin: 15px; 
+        border-radius: 20px;
+        border: 1px solid $primary-blue-color;
+        overflow-x: hidden;
+        .cardHeader{
+            width: auto;
+            height: 110px;
+            background:$primary-blue-color ;
+            border-radius: 20px;
+            border: 2px solid $blue-shade3-color;
+            display: flex;
+            .header{
+                color: $white-color;
+            }
+            .icon{
+                margin-top: 25px;
+                    margin-left: 15px;
+                    padding: 6px;
+                    width: 41px;
+                    height: 58px;
+                    border-radius: 10px;
+                    box-shadow: 0px 0px 3px -1px $primary-black-color;
+            }
+            .header{
+                margin-left: 10px;
+                display: block;
+                margin-top: 20px;
+                .iconHeading{
+                    display: flex;
+                }
+            }
+            .userStatus {
+                color: $white-color;
+                display: flex;
+                margin-left: auto;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                margin-right: 20px;
+            }
+            .activeStatus{
+                color: $white-color;
+                margin-left: auto;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                margin-right: 20px;
+
+            }
+
+        }
+        .bottomCard{
+            margin-top: 20px;
+            margin-left: 5px;
+            .dateStatus{
+                display: flex;
+                justify-content: space-between;
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .iconOtrDisplay{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 5px;
+                justify-items: center;
+                align-items: center;
+                justify-content: center;
+               }
+                .vitalsIcon{
+                    display: flex;
+                }
+                .iconValue{
+                    display: flex;
+                    margin-left: 10px; 
+                    .detailIcon{
+                        margin-right: 7px;
+                        margin-top: -6px;
+                        margin-bottom: 32px;
+                    }                       
+                }
+        }
+    }
+    img{   
+    /* height: 26px; */
+        height: 26px;
+        margin-top: 9px;
+        margin-left: 2px;
+        cursor: pointer;
+    }
+
+}
+
+
+.medicalForm{
+    width: auto;
+    height: auto;
+    font-weight: bold;
+    margin-top: 50px !important ;
+    margin:24px;
+
+    td {
+        text-align: left;
+        border: 1px solid $white-color;
+        border-width: 0 0 1px 0;
+        padding: 1rem 2rem;
+        font-weight: bold;
+        color:$primary-black-color;
+    }
+     th {
+        text-align: left;
+        padding: 1rem 2rem;
+        border: 1px solid $white-color;
+        border-width: 0 0 1px 0;
+        font-weight: 700;
+        color: $white-color;
+        background: $primary-blue-color;
+        transition: box-shadow 0.2s;
+        font-weight: bold;
+        img {
+            width: 19px;
+            height: 18px;
+            margin-left: 0px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
+    .docName{
+        color: $primary-blue-color;
+        cursor: pointer;
+    }
+    ::ng-deep .p-datatable-wrapper {
+        overflow: auto;
+        border: 1px solid;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width:768px){
+    .cardLayout{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .card{
+            .cardHeader{
+                .headerOtr{
+                    .status{
+                        margin-left: 180px;
+                    }
+                    .userSts{
+                        margin-left: 180px;
+                    }
+                    .detailSts{
+                        .content{
+                            .iconOtrDiplay{
+                                gap: 10px;
+                                margin-left:-10px;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        
+    }
+    ::ng-deep .activeSts {
+        margin-left: 198px;
+    }
+}
+@media (max-width:1024px){
+    .cardLayout{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        .card{
+            .cardHeader{
+                .headerOtr{
+                    .status{
+                        margin-left: 293px;
+                    }
+                    .userSts{
+                        margin-left: 297px;
+                    }
+                    .detailSts{
+                        .content{
+                            .iconOtrDiplay{
+                                gap: 10px;
+                                margin-left:-10px;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        
+    }
+   
+}

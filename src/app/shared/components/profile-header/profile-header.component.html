@@ -1,0 +1,23 @@
+<div class="profileHeader">
+  <div class="container1">
+    <div class="head">
+      <div class="ellipse"  [ngStyle]="{'border-color': userDetails.Male ? '#1955AF' : '#FE7AB6'}">
+        <!-- Assuming userDetails is an object with properties NameE, Age, etc. -->
+        <img class="profileImg" src={{userDetails.Icon}}>
+        <img class="vipicon" *ngIf=userDetails.VIP src="assets/icons/vipIcon.svg">
+      </div>
+      <div class="details">
+        <!-- Update the content to use Angular bindings -->
+        <p>{{ userDetails?.NameE }}, Age {{ userDetails?.Age }}</p>
+        <p>Mobile : 9665858888,Speaks : عربي</p>
+        <p>Lives : <strong> Arabia</strong></p>
+        <!-- <p>Mobile: {{ userDetails?.Mobile }}, Speaks: {{ userDetails?.Speaks }}</p>
+        <p>Lives: <strong>{{ userDetails?.Location }}</strong></p> -->
+      </div>
+    </div>
+    <div class="profileBtn">
+        <div class="margin">  <button pButton type="button" class="commomBtn" label="Back" (click)="goBack()">  <img class="backIcon" src="assets/icons/backicon.svg"></button></div>
+        <div class="margin">  <button pButton type="button" class="commomBtn" label="Home"  (click)="homePage()">  <img src="assets/icons/home.svg"></button></div>
+    </div>
+  </div>
+</div>

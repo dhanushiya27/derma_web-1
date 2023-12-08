@@ -1,0 +1,518 @@
+@use  '../../../../assets/commonStyle' as *;
+
+$primary-color: #007BFF;
+$icon-width: 27px;
+$icon-height: 28px;
+$container-width: 1863px;
+$container-height: 1001px;
+$container-border-radius: 23px;
+$container-border: 1px;
+$container-background: linear-gradient(0deg, #C8C8C8, #C8C8C8), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+$container-border-color: #C8C8C8;
+$searchbar-height: 50px;
+$separator-width: 1px;
+
+.allAptmtContainer{
+    overflow: hidden;
+    .buttonContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    
+
+    .topLeftButtons {
+        display: flex;
+        justify-content: space-between;
+        .allAppointmentOtr{
+            margin-right:10px;
+            .appImage{
+                width: 28px;
+                margin: 0px 10px;
+            }
+        }
+        .practionerOtr{
+            margin:0px 10px;
+            .practImage{
+                width: 28px;
+                margin: 0px 10px;
+            }
+        }
+    }
+    
+    .top-right-btn {
+        background-color:$blue-shade3-color;
+        color:  $white-color;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Poppins-Regular';
+        &:hover {
+            background-color: $blue-shade10-color;
+        }
+    }
+    
+    /* Container Styles */
+    .container {
+        max-width: 100vw;
+        height:auto;
+        overflow: hidden;
+        border-radius: $container-border-radius;
+        border: $container-border solid $container-border-color;
+        margin: 10px;
+        padding-bottom:20px;
+        .searchInr {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center the items horizontally */
+        }
+    }
+    
+    
+    /* Search Bar Styles */
+    .searchbar {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        height: 40px;
+        background-color: $white-shade1-color;
+        border: 1px solid $gray-border1-color;
+        border-radius: $container-border-radius; /* Matches the container border-radius */
+       margin: 20px
+    }
+    
+    .searchIcon {
+        width: $icon-width;
+        height: $icon-height;
+        margin: 0 10px; 
+    }
+    
+    .secondImage {
+        width: $icon-width;
+        height: $icon-height;
+        margin: 0 10px; 
+        cursor: pointer;
+    }
+    
+    .thirdImage {
+        width: $icon-width;
+        height: $icon-height;
+        margin: 0 18px;
+        cursor: pointer;
+    }
+    
+    input[type="text"] {
+        flex: 1;
+        height: 100%;
+        border: none;
+        outline: none;
+        padding: 0 10px;
+        font-size: $sz-12-font;
+        background-color:$white-shade1-color;
+        font-family: 'Poppins-Regular';
+    }
+    
+    .separatorLine {
+        width: $separator-width;
+        height: 100%;
+        background-color: $gray-border1-color;
+    }
+    
+    .image-right {
+        width: $icon-width;
+        height: $icon-height;
+        margin: 0 10px; 
+    }
+    
+    .searchBtn {
+        display: flex;
+        justify-content: center; 
+    }
+    
+    .timeBtn,
+    .nameBtn {
+        .sortImage {
+            width: $icon-width;
+            height: $icon-height;
+            margin: 2px 5px;
+            padding: 4px 2px;
+        }
+    }
+    
+    .searchButtons {
+        display: flex;
+        justify-content: center; 
+        gap: 10px; 
+        margin-bottom: 60px;
+        .btnTwo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: $white-shade2-color;
+            color: $blue-shade10-color;
+            border: none;
+            border-radius: 30px;
+            padding: 5px 40px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            gap: 6px;
+            height: 35px;
+            font-size: 14px;
+            border:1px solid $gray-border2-color;
+            &:hover {
+                background-color:$gray-border2-color ;
+            }
+            img {
+                width: 22px;
+                height: 22px;
+                margin-bottom: 2px;
+    
+            }
+        }
+    }
+
+    //card styles starts here
+    .cardOtrContainer{
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 50px 15px;
+        .cardContainer{
+            .cardContent{
+                display:flex;
+                justify-content: space-between;
+                width:100%;
+                max-height: 265px;
+                .imgOtrContainer{
+                    position: relative;
+                    bottom: 80px;
+                    .profileImgOtr{
+                            height:80px;
+                            width:80px;
+                        .profileImg{
+                            height:100%;
+                            width:100%;
+                            border:3px solid $blue-shade2-color;
+                            border-radius: 50%;
+                        }
+                        .profDescriptions{
+                            display:flex;
+                            justify-content: space-between;
+                            width: 250px;
+                            .profDescOtr{
+                                position: relative;
+                                left:10px;
+                                bottom:15px;
+                                text-align: center;
+                                .profDescA{
+                                    font-family: 'Poppins-Regular';
+                                    color:$blue-shade8-color;
+                                    font-size: $sz-14-font;
+                                    font-weight: $semi-bold-font;
+                                    bottom: 5px;
+                                    position: relative;
+                                }
+                                .profDescB{
+                                    font-family: 'Poppins-Regular';
+                                    color:$blue-shade8-color;
+                                    font-size: $sz-14-font;
+                                    font-weight: $semi-bold-font;
+                                    top: 20px;
+                                    left:10px;
+                                    position: relative;
+                                }
+                                .profDescG{
+                                    font-family: 'Poppins-Regular';
+                                    color:$pink-shade1-color;
+                                    font-size: $sz-14-font;
+                                    font-weight: $semi-bold-font;
+                                    bottom: 5px;
+                                    position: relative;
+                                }
+                            }
+                            .profDescNames{
+                                position: relative;
+                                bottom: 25px;
+                                .profDescNameE{
+                                    color:$blue-shade9-color;
+                                    font-size: $sz-16-font;
+                                    font-weight: $semi-bold-font;
+                                    font-family: 'Poppins-Regular';
+                                }
+                                .profDescNameA{
+                                    color:$primary-black-color;
+                                    font-size: $sz-16-font;
+                                    font-weight: $semi-bold-font;
+                                    font-family: 'Poppins-Regular';
+                                }
+                            }
+                        }
+                        .multiIconsOtr{
+                            display: grid;
+                            flex-direction: row;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 10px;
+                            width: 90px;
+                            .multiIcon{
+                                width:100%;
+                                height:100%;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .btnOtrContainer{
+                    display: flex;
+                    flex-direction: column-reverse;
+                    .encounterIcon{
+                        margin-right:10px;
+                    }
+                }
+                .cardContentContainer{
+                    width: 250px;
+                    height: 500px;
+                    .profBgContainer{
+                        display: flex;
+                        align-items: center;
+                        padding:10px;
+                        width: 250Px;
+                        height: 50px;
+                        position: relative;
+                        border-radius: 0px 10px 0px 10px;
+                        bottom: 40px;
+                        left: 20px;
+                        background: linear-gradient(to bottom,$blue-shade9-color,$blue-shade4-color);
+                        cursor: pointer;
+                        .doctorIcon{
+                            height: 30px;
+                            padding:0px 10px;
+                        }
+                        .doctorName{
+                            color:$white-color;
+                            font-size: $sz-16-font;
+                            font-weight: $semi-bold-font;
+                            font-family: 'Poppins-Regular';
+                        }
+                    }
+                    .doctorDetailsOtr{
+                        .doctorDetails{
+                            display: flex;  
+                            align-items: center;
+                            padding-bottom: 10px;
+                            .doctorIcon{
+                                height:30px; 
+                                width:25%;
+                            }
+                            .doctorIconOP{
+                                width:25%;
+                                text-align: center;
+                            }
+                            .calendarIcon{
+                                height:35px; 
+                                width:25%;
+                            }
+                            .clockIcon{
+                                height:25px;
+                                width:25%;
+                            }
+                            .detailsdesc{
+                                color:$gray-shade2-color;
+                                font-weight: $semi-bold-font;
+                                font-family: 'Poppins-Regular';
+                                font-size: $sz-16-font;
+                            }
+                            .detailsdescTime{
+                                color:$green-shade7-color;
+                                font-weight: $semi-bold-font;
+                                font-family: 'Poppins-Regular';
+                                font-size: $sz-16-font;
+                            }
+                        }
+                    }
+                    .doctorDescOtr{
+                        margin: 10px;
+                        position: relative;
+                        top:35px;
+                        .doctorDesc{
+                            width: 45px;
+                            padding: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                    .doctorDescTime{
+                        margin: 10px;
+                        .doctorDesc{
+                            width: 45px;
+                            padding: 5px;
+                            cursor: pointer;
+                        }
+                    }
+                    .remainderOtr{
+                        display:flex;
+                        align-items: center;
+                        width: 250Px;
+                        .remainderIcon{
+                            width: 10%;
+                            margin: 0px 10px 0px 10px;
+                        }
+                        .remainderText{
+                            color:$gray-shade2-color;
+                            font-weight: $semi-bold-font;
+                            font-family: 'Poppins-Regular';
+                            font-size: $sz-12-font;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+::ng-deep {
+
+    //Only for Practioner dialog window 
+    .p-dialog .p-dialog-header {
+        border-bottom: 0 none;
+        background-color: $primary-blue-color;
+        color: $white-color;
+        padding: 15px 25px 15px 25px;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+    svg.p-dialog-header-close-icon.p-icon {
+        color: white;
+        width: 62px;
+        height: 22px;
+    }
+    .p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+        background: none;
+    }
+    span#pn_id_3_header_title {
+        font-size: 20px;
+        font-family: 'poppins-regular';
+    }
+    //Ends here
+  
+
+    //button color changes on clicking
+    .activeImage, .whiteIcon{
+        display: none;
+    }
+    .allAptmtContainer .p-highlight button.btnTwo .activeImage {
+        display: block;
+    }
+    .allAptmtContainer .p-highlight button.btnTwo .inActiveImage{
+        display: none;
+    }
+    .allAptmtContainer .btnActive .whiteIcon
+    {
+        display: block;
+    }
+    .allAptmtContainer .btnActive .blueIcon
+    {
+        display: none;
+    }
+
+
+    //Started here
+    .allAptmtContainer{      
+        .topLeftButtons{
+            .btnActive .p-button {
+                color:$white-color;
+                background:$blue-shade10-color;
+                border: 1px solid $blue-shade10-color;
+                cursor: pointer;
+                border-radius: 25px;
+            }
+            button.p-ripple.p-element.p-button.p-component {
+                border-radius: 25px;
+            }
+            .p-button {
+                color: $blue-shade10-color;
+                background:$white-color;
+                border:1px solid $gray-border1-color;
+                font-family: 'Poppins-Regular';
+                font-size: $sz-16-font;
+                padding: 8px 15px;
+            }
+        }  
+        .searchBtn{
+            .p-button {
+                color:$white-color;
+                background:$blue-shade3-color;
+                border: 1px solid $blue-shade3-color;
+                border-radius: 15px;
+                font-family: 'Poppins-Regular';
+                font-size: $sz-16-font;
+                padding: 5px 10px;
+                cursor: pointer;
+                margin: 10px;
+            }
+            .p-button:hover{
+                background: $primary-blue-color;
+            }
+        }    
+        .cardOtrContainer{
+            .cardContainer{
+                .p-card {
+                    border:1px solid $gray-border1-color;
+                    border-left: 2px solid $blue-shade11-color;
+                    border-radius: 10px;
+                }
+                .btnOtrContainer{
+                    .p-button {
+                        color:$white-color;
+                        background:$blue-shade10-color;
+                        border: 1px solid $blue-shade10-color;
+                        border-radius: 30px;
+                        width:250px;
+                        display: flex;
+                        justify-content: center;
+                        padding: 8px 0px;
+                        font-family: 'Poppins-Regular';
+                        font-size: $sz-16-font;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .p-highlight a button.btnTwo {
+            background-color: $blue-shade10-color!important;
+            color:$white-color!important;
+        }
+        .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+            border: none !important;
+        }
+        .p-tabview .p-tabview-panels{
+            padding:0px;
+        }
+    }
+}
+
+
+//Media Queries
+
+@media (max-width:930px){
+    .allAptmtContainer{
+        .container{
+            .cardOtrContainer{
+                display: block !important;
+                width:100%;
+                .cardContainer{
+                    width:100%;
+                    align-items: center;
+                    margin:50px 20px;
+                }
+            }
+        }
+    }
+}
+
+

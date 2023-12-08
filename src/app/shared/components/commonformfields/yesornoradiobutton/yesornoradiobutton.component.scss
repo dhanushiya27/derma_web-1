@@ -1,0 +1,34 @@
+@use "../../../../../assets/commonStyle" as *;
+
+// radio button 
+::ng-deep {
+    .radioInnerSecForm {
+        border: 1px solid $gray-border3-color;
+        padding: 15px 15px 45px;
+        border-radius: 20px;
+        box-shadow: 0 6px 4px -2px #C6C8CA;
+        overflow-x: auto;
+        margin-top: 15px;
+
+        h3.formHeader {
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .radioBtnSec {
+            display: flex;
+            gap: 70px;
+            padding: 0 60px;
+
+            p-radiobutton {
+                position: relative;
+
+                label.p-radiobutton-label {
+                    left: 24px !important;
+                }
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<!-- Developer Name : Varsha 
+Module Name: Fractional CO2 -->
+
+<div class="mainContainer">
+    <form class="form" [formGroup]="fractionalForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+       <div class="headerSec">
+        <h2 class="commonHeader">Fractional CO2</h2>
+        <div class="fractionalBtnOuter">
+            <button pButton type="button" class="commomBtn"><img src="assets/icons/saveBtn.svg" alt="Save">Save</button>
+            <button pButton type="button" (click)="summary()" class="commomBtn" ><img src="assets/icons/summaryIcon.svg" alt="Save">Summary</button>
+            <button pButton type="button" class="commomBtn" [disabled]="true"><img src="assets/icons/signOff.svg" alt="Save">Sign Off</button>
+        </div>
+       </div>
+       <p-tabView class="fractionalTab">
+        <p-tabPanel headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class="tabOtr">
+                        <img class="tabIcon inActiveImage" src="../../../../assets/icons/note-black.svg"/>
+                        <img class="tabIcon activeImage" src="../../../../assets/icons/note-white.svg"/>
+                    </div>
+                    <span class="tabText">Note</span>
+            </ng-template>
+            <div class="p-field innerContainer">
+                <h2 class="commonHeader">Cancel Documentation</h2>
+                <app-fractional-form></app-fractional-form>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel  headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class="tabOtr">
+                        <img class="tabIcon inActiveImage" src="../../../../assets/icons/bodyChart-black.svg"/>
+                        <img class="tabIcon activeImage" src="../../../../assets/icons/bodyChart-white.svg"/>
+                    </div>
+                    <span class="tabText">Body Chart</span>
+            </ng-template>
+            <div class="p-field innerContainer">
+                <h2 class="commonHeader">Cancel Documentation</h2>
+                <app-body-chart></app-body-chart>
+            </div>
+        </p-tabPanel>
+        </p-tabView>
+    </form>
+</div>

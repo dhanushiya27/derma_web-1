@@ -1,0 +1,47 @@
+<div class="appoinmentsDetailsHeader">
+  <div class="divrow">
+    <p class="appDetailHeadertext">Ahmad Al Mazyd : Healthcare Timeline</p>
+  </div>
+  <img  src="../../../../assets/icons/xmarkWhite.svg" alt="">
+</div>
+<div class="tabSwitchingView">
+  <p-tabView class="appoinmentsDetailsView">
+    <p-tabPanel header="appoinmentsDetailsHd">
+      <ng-template pTemplate="header">
+        <div class="tab-header">
+          <span>Future Appointments</span>
+        </div>
+      </ng-template>
+      <form [formGroup]="filterForm">
+      <div class="futureAppointmentView">
+        <div class="commonfloting">
+          <label class="floatingLable">From Date</label>
+          <p-calendar class="backgroundimg" formControlName="startDate" placeholder="MM/DD/YYYY"></p-calendar>
+        </div>
+        <div class="commonfloting">
+          <label class="floatingLable">To Date</label>
+          <p-calendar class="backgroundimg" formControlName="toDate" placeholder="MM/DD/YYYY"></p-calendar>
+        </div>
+        <div class="dropdownfloting">
+          <label class="floatingLable">Appointment Type</label>
+          <p-dropdown class="dropdownFloating" appendTo="body" [options]="apointmentType" optionValue="id" optionLabel="name"  formControlName="episodeStatus"></p-dropdown>
+        </div>
+        <button pButton type="button" class="commomBtn" (click)="onFilterClick()"><img src="../../../../assets/icons/filterWhite.svg">Filter</button>
+        <button pButton type="button" class="commomBtn resetBlue"><img src="../../../../assets/icons/resetBlue.svg">Reset</button>
+      </div>
+      </form>
+      <div class="p-field">
+        <app-table [tableData]="tableData" [columns]="cols" [header]="'episode'" [design]="'primary'" ></app-table>
+    </div>
+    </p-tabPanel>
+ 
+    <p-tabPanel header="Charts">
+      <ng-template pTemplate="header">
+        <div class="tab-header">
+          <span>Previous Appointments</span>
+        </div>
+      </ng-template>
+      <div class="p-field"></div>
+    </p-tabPanel>
+  </p-tabView>
+</div>

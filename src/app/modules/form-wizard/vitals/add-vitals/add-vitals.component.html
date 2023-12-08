@@ -1,0 +1,68 @@
+<div class="vitalSigns">
+    <div class="margin">
+        <p class="tabheader">Vital Signs</p>
+    </div>
+    <form [formGroup]="vitalSignsForm" class="vitalform">
+        <div class="margin">
+            <div class="row1">
+                <div class="commonfloting">
+                   <label class="floatingLable">Body Temperature</label> 
+                    <input type="number" pInputText class="commonInput" maxlength="3" formControlName="bodyTemperature"  appThreeDigitInput/>
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Heart Rate/Pulse</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="heartRate" />
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Respiratory Rate</label>
+                    <input type="number" pInputText class="commonInput"   formControlName="respiratoryRate"/>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="commonfloting">
+                    <label class="floatingLable">Blood Glucose</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="bloodGlucose" />
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Height in (CM)</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="height"/>
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Weight in (Kilogram)</label>
+                    <input type="number" pInputText class="commonInput"   formControlName="weight"/>
+                </div>
+                <div> <p class="bmiCal">BMI: {{ bmiValue | number: '1.0-1'}}</p> </div>
+            </div>
+            <div class="row1">
+                <div class="commonfloting">
+                    <label class="floatingLable">Blood Oxygen Saturation Level (Spo2)</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="spo2"/>
+                </div>
+                <div class="dropdownfloting">
+                    <label class="floatingLable">Reflexes</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="reflexeState" placeholder="Select" optionValue="name"
+                        optionLabel="name"  formControlName="reflexes">
+                    </p-dropdown>
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Blood Pressure (Systolic)</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="systolicBP"/>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="commonfloting">
+                    <label class="floatingLable">Blood Pressure (Diastolic)</label>
+                    <input type="number" pInputText class="commonInput"  formControlName="diastolicBP"/>
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Head Circumference</label>
+                    <input type="text" pInputText class="commonInput"  formControlName="headCircumference"/>
+                </div>
+                <div class="textareafloting">
+                    <label class="floatingLable">Notes</label>
+                    <textarea class="commontextArea" pInputTextarea  placeholder="Notes" formControlName="notes"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

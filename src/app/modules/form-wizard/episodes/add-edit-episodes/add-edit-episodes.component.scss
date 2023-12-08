@@ -1,0 +1,128 @@
+@use "../../../../../assets/theme/theme-variable.scss" as *;
+@use "../../../../../assets/commonStyle/commonStyle.scss" as *;
+
+.episodeDetails {
+    margin: 50px;
+}
+    .episodeDetailsHeading {
+        color: #456dfe;
+        font-weight: 600;
+        padding-bottom: 20px;
+    }
+    .commonAge{
+        appearance: none;
+    }
+    .episodeDetailsRow1 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+.episodeInformation{
+    display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+}
+.episodeInformation1{
+    display: flex;
+    gap: 2rem;
+}
+.episodeInformationHeading{
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+::ng-deep {
+    .p-card .p-card-content {
+        padding: 0px; 
+    }
+    .p-card .p-card-body {
+        padding: 1.25rem 1.25rem 1.95rem 1.25rem;
+        // box-shadow: 5px 10px #888888;
+        // box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.1);
+        // box-shadow: inset 0 0 3rem #000;
+    }
+    .p-calendar .p-inputtext {
+        border: 1px solid $input-border-color !important;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: $sz-18-font;
+  color: $primary-black-color;
+  font-family: 'Poppins-Medium';
+  width: 380px;
+  resize: none;
+    }
+    p-dropdown.dropdownFloating .p-dropdown span {
+        padding: 1px 6px;
+        font-size: 18px;
+        color: #456DFE;
+        font-family: "Poppins-Medium";
+    }
+    p-calendar.backgroundimg input.p-inputtext{
+        background-image: url(../../../../../assets/icons/calendarBlue.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: right 14px top 13px;
+    }
+    p-dropdown.dropdownFloating .p-dropdown {
+        border: 1px solid #B7B7B7 !important;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #1E1D1D;
+        font-family: "Poppins-Medium";
+        width: 100%;
+    }
+    p-dropdown.dropdownFloatings .p-dropdown {
+        border: 1px solid #B7B7B7 !important;
+        padding: 0px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #1E1D1D;
+        font-family: "Poppins-Medium";
+        width: 289px;
+    }
+    p-dropdown.dropdownFloatings .p-dropdown span {
+        // padding: 1px 6px;
+        font-size: 18px;
+        color: #456DFE;
+        font-family: "Poppins-Medium";
+    }
+    .commonInput:focus-visible, .commonInput:focus {
+        border: 1px solid #B7B7B7 !important;
+        outline: none;
+        box-shadow: none;
+    }
+}
+span#pn_id_8_label {
+    padding: 0px;
+}
+.prbListAdd{
+    display: flex;
+    justify-content: space-between;
+    .addIcon {
+        width: 25px;
+        height: 25px;
+        margin-top: 15px;
+        margin-right: 25px;
+    }
+}
+::ng-deep{
+    .commonInput:focus-visible, .commonInput:focus {
+        border: 1px solid #B7B7B7 !important;
+        outline: none;
+        box-shadow: none;
+    }
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {  
+opacity: 1;
+}
+::ng-deep p-dropdown.dropdownFloating .p-dropdown {
+    border: 1px solid #B7B7B7 !important;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #1E1D1D;
+    font-family: "Poppins-Medium";
+    width: 379px;
+}

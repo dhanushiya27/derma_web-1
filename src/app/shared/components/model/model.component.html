@@ -1,0 +1,52 @@
+<!-- Developer Name : Rajaha Muthiaha 
+Module Name: Model  -->
+
+<!-- <div class="twoEpisodeDroupform" *ngFor="let item of ListData">
+  <p class="popupEpisode" (click)="popupclick(item)">{{ item.name }}</p>
+</div>
+
+<ng-container *ngIf="showRevokeAlert; else alertMessagesSection">
+  
+  <div class="alertRevokeMessage">
+    <div class="firstAlertPopupMessage">
+     
+      <div *ngIf="alertRevokeMessages && alertRevokeMessages.length > 0" class="alertPopup">{{ alertRevokeMessages[0].name }}</div>
+    </div>
+    <div class="alertPopupButton margin">
+      
+      <button *ngIf="alertRevokeMessages && alertRevokeMessages.length > 0" pButton type="button" class="commomBtnYes" label="Yes" (click)="onRevokeYesClick()"></button>
+      <button *ngIf="alertRevokeMessages && alertRevokeMessages.length > 0" pButton type="button" class="commomBtnNo" label="Cancel" (click)="onRevokeNoClick()"></button>
+    </div>
+  </div>
+</ng-container> -->
+
+<!-- Display alertMessage section -->
+
+
+<!-- <ng-template *ngIf="config.data.data.length > 0"> -->
+  
+  <div *ngFor="let message of this.config?.data?.data">   
+    <div class="alertPopupMessage">
+      <p-radioButton class="rounded no-border" id="{{ message.value }}" name="alert_radio" [(ngModel)]="selectedMessage" [value]="message" *ngIf="config.data.type =='alertRevoke'"></p-radioButton>
+      <div class="alertPopup" [ngClass]="{ 'selected': message === selectedMessage }">
+        {{ message.name }}
+      </div>
+    </div>   
+  </div>
+  <div *ngIf="config.data.confirm" class="alertPopupButton margin">
+    <button pButton type="button" class="commomBtnYes" label="Yes" (click)="onYesClick()"></button>
+    <button pButton type="button" class="commomBtnNo" label="Cancel"></button>
+  </div>
+<!-- </ng-template> -->
+
+<!-- for search from header section -->
+<div *ngIf="config.data.type == 'searchBarShow'" class="container">
+  <div class="searchInr">
+    <div class="searchbar">
+      <img class="searchIcon" src="assets/images/searchBar.png" alt="Search Icon">
+      <input type="text" placeholder="Search by Name, Patient ID, NID or Iqama ID, or Mobile" (keyup.enter)="closeDialog()">
+    </div>
+  </div>
+</div>
+
+

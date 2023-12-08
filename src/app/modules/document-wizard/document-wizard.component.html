@@ -1,0 +1,96 @@
+<app-profile-header></app-profile-header>
+<!-- Developer Name : selva
+Module Name: Document Wizard -->
+
+
+
+
+
+<div class="cardOtr">
+  <div class="detailsCard"  *ngFor="let details of cardDetails">
+    <div class="cardHeader">
+      
+      <div class="icon">
+        <img [src]="details.icon" >
+      </div>
+
+      <div class="header">
+        <h4>{{details.header}}</h4>
+        <div class="iconHeading">
+          <div *ngFor="let icons of details.iconOtr" >
+            <img [src]="icons.icon" (click)="handlePlusIconClick(icons, details)">
+          </div>
+        </div>
+      </div>
+
+        <div class="userStatus" *ngFor="let status of details.userStatus">
+          <p>{{status.status}}:</p>
+          <p>{{status.id}}</p>
+         </div>
+        
+        <div class="activeStatus" *ngFor="let activeSts of details.user">
+          <p>{{activeSts.name}}</p>
+          <p>{{activeSts.date}}</p>
+          <p>{{activeSts.time}}</p>
+        </div>
+
+
+      </div>
+      <div class="bottomCard">
+
+        <div class="title" *ngFor="let header of details.details" >
+          <h4>{{header.title}}</h4>
+          <div class="dateStatus">
+            <p>{{header.date}}</p>
+            <p>{{header.status}}</p>
+          </div>
+        </div>
+
+        <div class="iconOtrDisplay">
+          <div class="vitalsIcon" *ngFor="let vitalIcon of details.icons">
+            <div class="iconValue">
+              <img [src]="vitalIcon.icon" class="detailIcon">
+              <h4>{{ vitalIcon.rate }}</h4>
+            </div>
+  
+          </div>
+
+        </div>
+       
+        
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="medicalForm">
+    <p-table [value]="medicalForm" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr class="tableHeaderOtr">
+                <th class="tableHeader"><img src="assets/icons/medForm.svg" alt="">Medical Form</th>
+                <th class="tableHeader"><img src="assets/icons/sts.svg" alt="">Status</th>
+                <th class="tableHeader"><img src="assets/icons/user.svg" alt="">User</th>
+                <th class="tableHeader"><img src="assets/icons/doc.svg" alt="">Documents</th>
+                <th class="tableHeader"><img src="assets/icons/summary.svg" alt="">Summary</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-form>
+            <tr>
+                <td class="tabLabelGray">{{ form.formName }}</td>
+                <td class="tabLabelGray">{{ form.status }}</td>
+                <td class="tabLabelGray">{{form.user}}</td>
+                <td   class="tabLabelGray"><div   *ngFor="let document of form.document" class="docName" (click)="navigateToFormWizard(form)">
+                  {{ document.name }}
+                  <img class="docIcon" [src]="document.icon" alt="{{ document.name }}" />
+                </div>
+              </td>
+                <td class="tabLabelGray">{{form.summary}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+

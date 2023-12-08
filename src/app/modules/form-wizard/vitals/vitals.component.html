@@ -1,0 +1,77 @@
+<div *ngIf="currentPage == 'list'">
+  <div class="vitalView">
+    <div class="margin"><p class="tabheader">Vitals</p></div>
+    <img src="assets/icons/addIcon.svg" class="addicon" (click)="addVitals()">
+  </div>
+</div>
+<p-tabView class="vitalsView" (onChange)="onTabChange($event)">
+  <p-tabPanel header="Vitals">
+    <ng-template pTemplate="header">
+      <div class="tab-header">
+        <img [src]="isTabHighlightedCondition(0) ? 'assets/images/vitalIcon.png' : 'assets/icons/vitalBlueIcon.png'">
+        <span>Vitals</span>
+      </div>
+    </ng-template>
+    <div class="p-field">
+      <app-table (editDataEvent)=editVitals($event) (viewDataEvent)=viewVitals($event) [tableData]="tableData"
+        [columns]="cols" [header]="'vital'" [design]="'secondary'"></app-table>
+    </div>
+    <!-- Your content for Tab 1 -->
+  </p-tabPanel>
+
+  <p-tabPanel header="Charts">
+    <ng-template pTemplate="header">
+      <div class="tab-header">
+        <img [src]="isTabHighlightedCondition(1) ? 'assets/icons/chartIcon.png' : 'assets/icons/chartBlueIcon.png'">
+        <span>Charts</span>
+      </div>
+    </ng-template>
+    <div class="p-field">
+      <app-chart></app-chart>
+    </div>
+
+    <!-- Your content for Tab 2 -->
+  </p-tabPanel>
+
+  <!-- Add more tab panels as needed -->
+</p-tabView>
+<div *ngIf="currentPage == 'add'">
+  <div class="vitalView">
+    <div class="margin">
+      <p class="tabheader">
+        <img class="backicon" (click)="listVitals()" src="assets/icons/blackbackicon.svg">Vitals
+      </p>
+    </div>
+    <div class="margin"> <button pButton type="button" (click)="submitForm()"
+        [disabled]="!addVitalsComponent || !addVitalsComponent.isFormDirty" class="commomBtn" label="Click">
+        <img src="assets/icons/saveicon.svg">Save</button></div>
+  </div>
+</div>
+<app-add-vitals #vitalsRef *ngIf="currentPage == 'add'"></app-add-vitals>
+
+<div *ngIf="currentPage == 'edit'">
+  <div class="vitalView">
+    <div class="margin">
+      <h2 class="commonHeader"><img class="backicon" (click)="listVitals()" src="assets/icons/blackbackicon.svg">Vitals
+      </h2>
+    </div>
+    <div class="marginOuter">
+      <div class="margin"> <button pButton type="button" class="commomBtn" (click)="updateForm()" label="Click">
+          <img src="assets/icons/saveicon.svg">Update</button>
+      </div>
+      <div class="margin"> <button pButton type="button" class="commomBtn" label="Click">
+          <img src="assets/icons/tick-white.svg">Submit</button>
+      </div>
+    </div>
+  </div>
+  <app-add-vitals [formData]="formValues" #vitalsRef></app-add-vitals>
+</div>
+<div *ngIf="currentPage == 'report'">
+  <div class="vitalView">
+    <div class="margin">
+      <h2 class="commonHeader"><img class="backicon" (click)="listVitals()" src="assets/icons/blackbackicon.svg">Vitals
+      </h2>
+    </div>
+  </div>
+  <app-view-vitals [formData]="formValues"></app-view-vitals>
+</div>

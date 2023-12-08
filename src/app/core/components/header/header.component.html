@@ -1,0 +1,33 @@
+<div class="mainContainer header">
+    <div class="subContainer">
+        <form [formGroup]="headerForm" class="formOuter">
+            <div class="headerSection">
+                <img class="image" [src]="selectedBranchImage ? selectedBranchImage : '../../../../assets/images/header-logo.png'"> 
+                <!-- <p-dropdown class="dremadropdown" formControlName="city"  appendTo="body" [options]="cities" optionLabel="label" ></p-dropdown> -->
+         
+                <p-dropdown class="dremadropdown" [options]="branches" appendTo="body" (onChange)="onBranchChange($event.value)"></p-dropdown>
+            </div>
+            <div class="headerSection dateFormate">
+                <h1 class="outpatients">Outpatients</h1>
+                <button class="arrowbtnSec" (click)="goPreviousMonth()"><img class="image" src="../../../../assets/icons/date_arrowOne.svg"> </button>
+                <p-calendar appendTo="body"  [minDate]="minDateValue" formControlName="date" dateFormat="dd/mm/yy"></p-calendar>
+                <button class="arrowbtnSec" (click)="goNextMonth()"><img class="image" src="../../../../assets/icons/date_arrowTwo.svg"></button>
+                <button class="btnSec" (click)="showCurrentDate()">Today</button>
+            </div>
+            <div class="headerSection">
+                <img class="notifiimage" (click)="showSearchHeader('','add')" src="../../../../assets/icons/Search.svg"> 
+                <img class="notifiimage" src="../../../../assets/icons/Notifications.svg"> 
+
+                <div class="profileName">
+                    <img class="image" src="../../../../assets/icons/logoName.svg"> 
+                    <div class="nameOuter">
+                        <h3 class="loginName">Hashim</h3>
+                        <p class="loginsub">({{this.userRole}})</p>
+                        <p class="loginsub">Dermatology Department</p>
+                    </div>
+                    <img class="Logoutimage" src="../../../../assets/icons/LogoutImg.svg"  (click)="logOut()"> 
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

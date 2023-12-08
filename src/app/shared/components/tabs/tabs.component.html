@@ -1,0 +1,28 @@
+<div class="tabViewContainer">
+    <p-tabView class="sharedTab" [(activeIndex)]="activeIndex" (onChange)="onTabChange($event)">
+        <p-tabPanel *ngFor="let tab of tabDetails">
+            <ng-template pTemplate="header">
+                <!-- <div [pTooltip]="tab.pageTitle"> -->
+                <img *ngIf="tab.imgHeader" [src]="tab.imgHeader" />
+                <span *ngIf="tab.label">{{tab.label}}</span>
+                <!-- </div> -->
+            </ng-template>
+            <div *ngIf="header == 'orders'"> 
+                <div *ngIf="tab.pageTitle != 'All Orders'">
+                    <p *ngIf="tab.pageTitle" class="title">{{ tab.pageTitle }}</p>
+                    <app-table *ngIf="tab.tableData" (editDataEvent)=editVitals($event) (actionClicked)="actionBtn($event)"
+                        (viewDataEvent)=viewVitals($event) [tableData]="tab.tableData" [columns]="tab.cols"
+                        [header]="'orders'"></app-table>
+                </div>
+                <div *ngIf="tab.pageTitle == 'All Orders'">
+                    <div class="titleAllOrder" *ngFor="let t of tabDetails">
+                        <p *ngIf="t.pageTitle && t.pageTitle != 'All Orders'&&t.tableData" class="title">{{ t.pageTitle }}</p>
+                        <app-table *ngIf="t.tableData && t.pageTitle != 'All Orders'" (editDataEvent)=editVitals($event)
+                            (viewDataEvent)=viewVitals($event) [tableData]="t.tableData" [columns]="t.cols"
+                            [header]="header" (actionClicked)="actionBtn($event)"></app-table>
+                    </div>
+                </div>
+            </div>
+        </p-tabPanel>
+    </p-tabView>
+</div>

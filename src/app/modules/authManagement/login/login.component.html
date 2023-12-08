@@ -1,0 +1,34 @@
+<div class="loginContainer">
+    <div class="bg-container">
+        <img class="image" src="../../../../assets/images/loginbg-img.png">
+    <div class="formotr">
+        <div class="formHeaderSec">
+            <img class="logo-image" src="../../../../assets/images/Derma-logo.svg">
+            <h1 class="loginTitle">Login to your account</h1>
+        </div>
+        <div class="formContainer">
+            <form class="form" [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="formGroup">
+                    <div class="commonfloting">
+                        <label class="floatingLable">Username</label>
+                        <input type="email"  formControlName="userName"  pInputText  class="commonInput" />
+                      </div>
+                </div>
+
+                <div class="formGroup pwd">
+                    <div class="commonfloting">
+                        <label class="floatingLable">Password</label>
+                        <input type="password" autocomplete="off" formControlName="password"
+                        [maxlength]="20" id="passwordInput" pInputText  class="commonInput"/>
+                      </div>
+                </div>
+                <div class="forgotPwd">
+                    <label class="loginfloatLable">Forgot Password ?</label>
+                </div>
+                <div class="btnOtr">
+                    <p-button  [disabled]="!loginForm.valid" (click)="myForm.ngSubmit.emit()" class="commomBtnYes" type="submit" >LOGIN</p-button>
+                </div>
+                </form>
+                </div>
+    </div>
+    </div>

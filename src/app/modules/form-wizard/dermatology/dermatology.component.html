@@ -1,0 +1,78 @@
+<!-- developer: Jayamurugan -->
+<!-- modules: dermatology form -->
+
+
+<div class="mainContainer">
+    <form class="form" [formGroup]="DermatologyForm" #myForm="ngForm" (ngSubmit)="onSubmit()">
+       <div class="headerSec">
+        <h2 class="commonHeader">Dermatology General Form</h2>
+        <div class="dermaBtnOuter">
+            <button pButton type="button" class="commomBtn" label="Save" > <img src="assets/icons/saveBtn.svg" alt="Save"></button>
+            <button pButton type="button" class="commomBtn" label="Summary" > <img src="assets//icons/der-summary.svg" alt="Save"></button>
+            <button pButton type="button" class="commomBtn" label="Sign Off" > <img src="assets/icons/der-signoff.svg" alt="Save"></button>
+        </div>
+       </div>
+       <p-tabView class="dermatologyTab">
+        <p-tabPanel header="Vitals" headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class=" vita">
+                        <img src="../../../../assets/icons/der-historyblack.svg" class="centeredImage blackimg" />
+                        <img src="../../../../assets/icons/der-Historywhite.svg" class="centeredImage whiteimg" />
+                    </div>
+                    <span class="tabheader"> History </span>
+            </ng-template>
+            <div class="p-field innerContainer">
+               <app-historyform></app-historyform>
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Vitals" headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class=" vita">
+                        <img src="../../../../assets/icons/der-subblack.svg" class="centeredImage blackimg" />
+                        <img src="../../../../assets/icons/der-subWhite.svg" class="centeredImage whiteimg" />
+                    </div>
+                    <span class="tabheader"> Subjective </span>
+            </ng-template>
+            <div class="p-field">
+              
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Vitals" headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class=" vita">
+                        <img src="../../../../assets/icons/der-Examinationblack.svg" class="centeredImage blackimg" />
+                        <img src="../../../../assets/icons/der-examinationwhite.svg" class="centeredImage whiteimg" />
+                    </div>
+                    <span class="tabheader"> Examination </span>
+            </ng-template>
+            <div class="p-field">
+              
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Vitals" headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class=" vita">
+                        <img src="../../../../assets/icons/der-PlanofCareblack.svg" class="centeredImage blackimg" />
+                        <img src="../../../../assets/icons/der-PlanofCarewhite.svg" class="centeredImage whiteimg" />
+                    </div>
+                    <span class="tabheader"> Plan of Care </span>
+            </ng-template>
+            <div class="p-field">
+              
+            </div>
+        </p-tabPanel>
+        <p-tabPanel header="Vitals" headerClass="derTabSec">
+            <ng-template pTemplate="header">
+                    <div class=" vita">
+                        <img src="../../../../assets/icons/der-Procedureblack.svg" class="centeredImage blackimg" />
+                        <img  src="../../../../assets/icons/der-procedurewhite.svg" class="centeredImage whiteimg" />
+                    </div>
+                    <span class="tabheader">Procedure </span>
+            </ng-template>
+            <div class="p-field">
+              
+            </div>
+        </p-tabPanel>
+        </p-tabView>
+    </form>
+</div>

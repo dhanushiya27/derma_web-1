@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@use './assets/commonStyle' as *;
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('assets/font/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('assets/font/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('assets/font/Poppins-Medium.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('assets/font/Poppins-Regular.ttf');
+}
+
+body {
+    user-select: none; //Added by Varsha on 5-12-2023
+}

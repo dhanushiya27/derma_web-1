@@ -1,0 +1,61 @@
+@use "../../../../assets/commonStyle" as *;
+
+.cardHeader{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 10px 10px;
+    .cardTitle{
+        font-family: 'Poppins-Regular';
+        font-weight: $semi-bold-font;
+        color:$primary-black-color;
+        font-size: $sz-20-font;
+    }
+    .refreshIcon{
+        height:30px;
+        width:30px;
+        margin-left:10px;
+    }
+}
+.cardContentOtr{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 5px 20px 20px 20px;
+    .imageOtr{
+        border:1px solid $input-border-color;
+        border-radius: 20px;
+        width:50%;
+        .chartImage{
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .infoOtr{
+        width:50%;
+        .infoArea{
+            border-radius: 20px;
+            height: 100%;
+        }
+    }
+}
+
+
+::ng-deep {
+    .bodyCard{
+        .p-card {
+            box-shadow:0px 2px 0px 0px  $input-border-color;
+            border-radius:20px;
+        }
+        p-card .p-card-body{
+            border:1px solid $input-border-color;
+            border-radius: 20px;
+        }
+        .p-card .p-card-content{
+            padding:0px;
+        }
+        textarea:focus-visible {
+            outline:none;
+        } 
+    }
+}

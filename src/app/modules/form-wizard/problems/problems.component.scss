@@ -1,0 +1,119 @@
+@use  '../../../../assets/commonStyle' as *;
+
+.problems{
+    .titleBar{
+        width: auto;
+        height: 85px;
+        padding: 25px;
+        gap: 9px;
+        background:$white-shade1-color ;
+        display: flex;
+        border-bottom: $gray-shade3-color;
+        box-shadow: 0 6px 4px -2px $gray-border1-color;
+        img {
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+        }
+        .tabheader {
+            font-size: 18px;
+            color: $primary-black-color;
+            font-family: "Poppins-SemiBold";
+        }
+    }
+    .searchbarOtr{
+        .searchBar{
+            margin-left: 36px;
+            display: flex;
+            margin-top: 35px;
+            img{
+                width: 42px;
+                height: 42px;
+            }
+            .problemsList{
+                display: flex;
+                margin-left: 56%;
+                img{
+                    margin-left: 10px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+    .problemsOtr{
+        .searchBar{
+            margin-left: 30px;
+            display: flex;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            img{
+                width: 42px;
+                height: 42px;
+                cursor: pointer;
+            }
+            .problemsList{
+                display: flex;
+                margin-left: 40%;
+                img{
+                    margin-left: 10px;
+                    width: 24px;
+                    height: 24px;
+                    cursor: pointer;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+.editPage{
+    .headerOtr{
+        .titleBar{
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+            height: 85px;
+            padding: 25px;
+            background:$white-shade1-color ;
+            box-shadow: 0 6px 4px -2px $gray-border1-color;
+            .titleOtr{
+                display: flex;
+                img{
+                    width: 21px;
+                    height: 17px;
+                    margin-top: 6px;
+                    margin-right: 8px;
+                }
+                .tabheader {
+                    font-size: 18px;
+                    color:$primary-black-color;
+                    font-family: "Poppins-SemiBold";
+                }
+            }
+            
+           
+        }
+    }
+}
+.medicalCodeTable{
+    width: auto;
+}
+    .p-datatable>.p-datatable-wrapper {
+        overflow: auto;
+        border-radius: 30px;
+        box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        text-align: left;
+        border-width: 0 0 1px 0;
+        padding: 1rem 1rem;
+    }
+    .p-datatable .p-datatable-tbody > tr > td {
+        text-align: left;
+        border: 1px solid $white-color;
+        border-width: 0 0 1px 0;
+        padding: 1rem 1rem;
+    }
+    
+    
+

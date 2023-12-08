@@ -1,0 +1,64 @@
+<!-- Initial Screen -->
+<div *ngIf="editPage">
+<div class="problemsAdd" *ngIf="currentPage == 'viewProblem'" >
+    
+    <div class="formOtr"> 
+        <div class="mcListTable">
+            <app-search-fav [allData]="medicalCodeList" (header)="'problem'" (radioSelectionChanged)="handleRadioSelection($event)">
+            </app-search-fav>
+        </div>
+
+        <div class="newProblemOtrDiv">
+            <div class="newProblemOtr" (click)="toggleNewProblemsList()" *ngIf="selectedTreatment"  >
+                <div class="problemsList" >
+                    <h2> New Problem</h2>
+                    <img src="assets/icons/{{ isNewProblemsListVisible ? 'expandDown':'upArrow'  }}.svg" alt="">
+                </div>
+                <div class="newProblem"  [@expandCollapse]="isNewProblemsListVisible ? 'expanded' : 'collapsed'" >
+                    <div class="nbtitleBar"  >
+                        <p class="tabheader">{{selectedTreatment.treatment}} </p>
+                        <div class="margin"> <button pButton type="button"  class="commomBtn" >
+                            <img src="assets/icons/saveicon.svg" >Save</button>
+                        </div>
+                    </div>
+                <div class="formOtr">
+                        <div class="dropdownfloting">
+                            <label class="floatingLable">Occurance</label>
+                            <p-dropdown class="dropdownFloating"   appendTo="body" [options]="occurance" optionValue="name"
+                                optionLabel="name"  formControlName="episodeStatus"></p-dropdown>
+                        </div>
+                        <div class="commonfloting">
+                            <label class="floatingLable">Date</label>
+                            <p-calendar class="backgroundimg" formControlName="testingDate" placeholder="MM/DD/YYYY"><img src="assets/icons/deleteIconRed.svg" ></p-calendar>
+                        </div>
+                        <div class="delImg">
+                            <img src="assets/icons/deleteIconRed.svg" >
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="medicalCodeTable">
+                
+                <div class="pList" (click)="toggleProblemsList()" >
+                    <div class="problemsList"  >
+                        <h2> Problems List</h2>
+                        <img src="assets/icons/{{ isProblemsListVisible ? 'expandDown':'upArrow'  }}.svg" alt="">
+                    </div>
+            </div>
+                <div class="p-field" *ngIf="currentPage == 'viewProblem'"  [@expandCollapse]="isProblemsListVisible ? 'expanded' : 'collapsed'" >
+                    <app-problems-list (editDataEvent) = editTable($event)   [@expandCollapse]="isProblemsListVisible ? 'expanded' : 'collapsed'"></app-problems-list>
+                </div>
+            </div>
+        </div>
+           
+            
+        
+        
+           
+</div>
+
+</div>
+</div>
+
+

@@ -1,0 +1,17 @@
+@use "../../../../assets/theme/theme-variable.scss";
+@use "../../../../assets/commonStyle/commonStyle.scss";
+::ng-deep{
+    .tabViewContainer{
+        width: 100%;
+        height: 100%;
+        .title{
+            padding: 5px 15px 20px 30px;
+            @extend .popupTitle;
+        }
+        .titleAllOrder{
+            .p-datatable-wrapper {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

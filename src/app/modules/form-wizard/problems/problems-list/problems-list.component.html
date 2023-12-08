@@ -1,0 +1,14 @@
+<div class="p-field" *ngIf="currentPage == 'list'">
+    <app-table (editDataEvent) = editProblems($event) [tableData]="tableData"  [columns]="cols" [header]="'problems'" [design]="'primary'" ></app-table>
+</div>
+
+<div *ngIf="currentPage == 'edit'">
+    <app-add-edit-problems [editedData]="tableEditedData" ></app-add-edit-problems>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+@import"./../../../../assets/theme/theme-variable.scss";
+
+.vitalView {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray-border3-color;
+    padding: 14px 40px;
+    background-color: $white-shade1-color;
+    .marginOuter{
+        display: flex;
+        justify-content: space-between;
+        width: 21%;
+        gap: 10px
+    }
+
+    .addicon {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .commomBtn {
+        width: 126px;
+        height: 44px;
+
+    }
+    .commomBtn:disabled {
+        background-color: $blue-shade4-color;
+        cursor:not-allowed;
+    }
+    .backicon {
+        margin-right: 5px;
+        font-family: 'Poppins-SemiBold';
+        cursor: pointer;
+    }
+}
+
+::ng-deep {
+    // css for list tab start
+    .vitalsView .p-tabview-nav-container {       
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .vitalsView .p-tabview-nav,
+    .vitalsView .p-tabview .p-tabview-nav-content,
+    .vitalsView .p-tabview-nav-container {
+        width: 100% !important;
+    }
+    .vitalsView .p-tabview .p-tabview-nav li.p-highlight,
+    .vitalsView .p-tabview .p-tabview-nav li {
+        margin-left: 0 !important;
+    }
+    
+    .vitalsView .p-tabview .p-tabview-nav li {
+        width: 50% !important;
+        a {
+            .tab-header{
+                margin: 10px 0px;
+                display: flex;
+                img {
+                    width: 25px;
+                    height: 25px;                   
+                }
+                span {
+                    padding: 0px 10px;
+                    color:$black-color;
+                }
+            }
+        }
+    }
+    .vitalsView .p-tabview .p-tabview-nav li.p-highlight
+    {
+        background-color: $primary-blue-color;
+        a {
+            .tab-header{
+                span {
+                    color:$white-color;
+                }
+            }
+        }
+    }
+    .vitalsView .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        justify-content: center;
+        padding: 10px 0;
+    }
+    // css for list tab end
+
+    .p-tabview .p-tabview-panels {
+        padding: 0px;
+    }
+}

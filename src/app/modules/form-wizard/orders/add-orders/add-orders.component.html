@@ -1,0 +1,72 @@
+<div class="addOrderContainer">
+    <p-tabView [(activeIndex)]="activeIndex" (onChange)="onTabChange($event,'parent')">
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex-item">
+                    <img [src]="activeIndex == 0?'../../../assets/icons/orderDiagnosticWhite.svg':'../../../assets/icons/orderDiagnosticBlack.svg'" />
+                    <span>Diagnostic</span>
+                </div>
+
+            </ng-template>
+            <p-tabView>
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <div class="flex-item">
+                            <img [src]="'../../../assets/icons/orderLabformWhite.svg'" />
+                            <span>Lab</span>
+                        </div>
+                    </ng-template>
+                    <app-order-lab-form/>
+                </p-tabPanel>
+            </p-tabView>
+        </p-tabPanel>
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex-item">
+                    <img [src]="activeIndex == 1?'../../../assets/icons/orderTreatmentWhite.svg':'../../../assets/icons/orderTreatmentBlack.svg'" />
+                    <span>Treatment</span>
+                </div>
+            </ng-template>
+            <p-tabView [(activeIndex)]="activeIndexChild" (onChange)="onTabChange($event,'child')">
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <div class="flex-item">
+                            <img [src]="activeIndexChild == 0?'../../../assets/icons/orderMediciWhite.svg':'../../../assets/icons/orderMediciBlack.svg'" />
+                            <span>Medication</span>
+                        </div>
+                    </ng-template>
+                   <app-order-medication-form/>
+                </p-tabPanel>
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <div class="flex-item">
+                            <img [src]="activeIndexChild == 1?'../../../assets/icons/orderClinicalWhite.svg':'../../../assets/icons/orderClinicalBlack.svg'" />
+                            <span>Clinical Procedure</span>
+                        </div>
+                    </ng-template>
+                    <app-order-clinical-form/>
+                </p-tabPanel>
+            </p-tabView>
+        </p-tabPanel>
+        <p-tabPanel>
+            <ng-template pTemplate="header">
+                <div class="flex-item">
+                    <img [src]="activeIndex == 2?'../../../assets/icons/orderAdminWhite.svg':
+                    '../../../assets/icons/orderAdminBlack.svg'" />
+                    <span>Admin</span>
+                </div>
+            </ng-template>
+            <p-tabView>
+                <p-tabPanel>
+                    <ng-template pTemplate="header">
+                        <div class="flex-item">
+                            <img [src]="'../../../assets/icons/orderAppointmentWhite.svg'" />
+                            <span>Appointment</span>
+                        </div>
+                    </ng-template>
+                    <app-order-appointment-form/>
+                </p-tabPanel>
+            </p-tabView>
+        </p-tabPanel>
+    </p-tabView>
+</div>

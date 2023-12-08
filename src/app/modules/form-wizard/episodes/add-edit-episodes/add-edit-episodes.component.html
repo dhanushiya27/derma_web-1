@@ -1,0 +1,127 @@
+<!-- Developer Name : Rajaha Muthiaha 
+Module Name: Add-Edit Episodes -->
+
+<div class="addEpisodes">
+    <form [formGroup]="episodeForm">
+      <div class="margin">
+        <div class="episodeDetails">
+          <p class="episodeDetailsHeading" (click)="showAlert('','add')">Episode Details</p>
+          <p-card>
+            <div class="episodeDetailsRow1">
+              <div class="commonfloting">
+                <label class="floatingLable">Episode Title</label>
+                <input type="text" formControlName="episodeTitle" pInputText class="commonInput" />
+              </div>
+              <div class="commonfloting">
+                <label class="floatingLable">Start Date</label>
+                <p-calendar class="backgroundimg" formControlName="startDate" (onSelect)="dateRangeValidation()" placeholder="MM/DD/YYYY"></p-calendar>
+              </div>
+              <div class="commonfloting">
+                <label class="floatingLable">Episode Age</label>
+                <input type="number" formControlName="episodeAge" pInputText class="commonInput" />
+              </div>
+             
+<div class="dropdownfloting">
+                <label class="floatingLable">Episode Status</label> <!-- used show click function here -->
+                <p-dropdown class="dropdownFloating" appendTo="body" [options]="episodeStatusList" optionValue="id"
+                    optionLabel="name"  formControlName="episodeStatus" (click)="showEpisodeStatus('','add')" [disabled]="true"></p-dropdown>
+              </div>
+              <div class="commonfloting">
+                <label class="floatingLable">Discharged Planned Date</label>
+                <p-calendar class="backgroundimg" formControlName="dischargedPlannedDate" placeholder="MM/DD/YYYY"></p-calendar>
+              </div>
+              <div class="commonfloting">
+                <label class="floatingLable">End Date</label>
+                <p-calendar class="backgroundimg" (onSelect)="dateRangeValidation()" formControlName="endDate" placeholder="MM/DD/YYYY"></p-calendar>
+              </div>
+            </div>
+          </p-card>
+        </div>
+  
+        <!-- Episode Information -->
+        <div class="episodeDetails">
+          <p class="episodeDetailsHeading">Episode Information</p>
+          <p-card>
+            <div class="episodeDetailsRow2">
+              <div class="episodeInformation">
+                <div class="textareafloting">
+                  <label class="floatingLable">Chief Complaint</label>
+                  <textarea class="commontextArea" formControlName="chiefComplaint" pInputTextarea></textarea>
+                </div>
+                <div class="textareafloting">
+                  <label class="floatingLable">Sign and Symptoms</label>
+                  <textarea class="commontextArea" formControlName="signAndSymptoms" pInputTextarea></textarea>
+                </div>
+              </div>
+              <div class="textareafloting">
+                <label class="floatingLable">Other Note</label>
+                <textarea class="commontextArea" formControlName="otherNote" pInputTextarea></textarea>
+              </div>
+            </div>
+          </p-card>
+        </div>
+  
+        <!-- problem List -->
+        <div class="episodeDetails">
+          <div class="episodeInformationHeading">
+            <div class="pListEpisode">
+              <p class="episodeDetailsHeading">Problem List</p>
+            </div>
+            <div>
+              <img src="assets/icons/addIcon.svg" class="addIcon">
+            </div>
+          </div>
+          <!-- <p-table>
+            <ng-template pTemplate="header">
+                <tr class="tableHeaderOtr">
+                    <th class="tableHeader">Title</th>
+                    <th class="tableHeader">Problems</th>
+                    <th class="tableHeader">Primary</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                  <td class="tabLabelGray">{{ product.name }}</td>
+                  <td class="tabLabelGray">{{ product.key }}</td>
+                  <td class="tabLabelGray"></td>
+              </tr>
+          </ng-template>
+        </p-table> -->
+        </div>
+  
+  
+        <!-- Discharge Details -->
+          <div class="episodeDetails">
+            <p class="episodeDetailsHeading">Discharge Details</p>
+            <p-card>
+              <div class="episodeDetailsRow2">
+                <div class="episodeInformation1">
+                  <div class="commonfloting">
+                    <label class="floatingLable">Date of Discharge</label>
+                    <p-calendar class="backgroundimg" formControlName="dateOfDischarge"  placeholder="MM/DD/YYYY"></p-calendar>
+                  </div>
+<div class="dropdownfloting">
+                    <label class="floatingLable" >Discharge Type</label>
+                    <p-dropdown class="dropdownFloating" id="droupdown"  appendTo="body" [options]="dischargeTypeList" optionValue="id"
+                        optionLabel="name"  formControlName="dischargeType" (click)="showDischargeType('','add')" [disabled]="true"></p-dropdown>
+                  </div>
+                </div>
+                <div class="episodeInformation">
+                  <div class="textareafloting">
+                    <label class="floatingLable">Discharge Note</label>
+                    <textarea class="commontextArea" formControlName="dischargeNote" pInputTextarea></textarea>
+                  </div>
+                  <div class="textareafloting">
+                    <label class="floatingLable">Instruction after Discharge</label>
+                    <textarea class="commontextArea" formControlName="instructionAfterDischarge" pInputTextarea></textarea>
+                  </div>
+                </div>
+              </div>
+            </p-card>
+          </div>
+      </div>
+    </form>
+  </div>
+  
+
+  <!-- <app-model [discStatus]="discStatus"></app-model> -->

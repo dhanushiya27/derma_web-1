@@ -1,0 +1,27 @@
+@import "./../../../../../assets/theme/theme-variable.scss";
+
+::ng-deep{
+    .bodyChartContainer{
+        .bodyCard {
+            display: grid;
+            flex-direction: row;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px 40px;
+        }
+    }
+}
+
+
+@media (max-width:930px){
+    .bodyChartContainer{
+        ::ng-deep{
+            .bodyCard {
+                display: block !important;
+                width:100%;
+            }
+            .bodyCard .p-card {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

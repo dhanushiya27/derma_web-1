@@ -1,0 +1,217 @@
+@use "../../../../assets/theme/theme-variable.scss" as *;
+@use "../../../../assets/commonStyle/commonStyle.scss" as *;
+
+::ng-deep {
+    .popupFormContainer {
+        border: 1px solid $gray-border3-color;
+        border-radius: 15px;
+
+        .popupFormHeader {
+            background-color: $primary-blue-color;
+            // height: 25%;
+            border-radius: 15px 15px 0px 0;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .heading {
+                @extend .tableHeader;
+                width: 165px;
+            }
+
+            .headerDropdown {
+                .p-dropdown {
+                    background: $primary-blue-color;
+                    color: $white-color;
+                    height: 40px;
+                    width: 200px;
+                }
+
+                .p-dropdown .p-dropdown-label {
+                    // background: #3d73cf;
+                    border: 0 none;
+                    color: $white-color;
+                    border-radius: 6px 0px 0px 6px;
+                }
+
+                .p-dropdown .p-dropdown-trigger {
+                    // background: #e40a0a;
+                    color: $white-color;
+                    width: 3rem;
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+
+                .p-float-label label {
+                    color: $white-color;
+                    // margin: 5px 0;
+                }
+
+                svg.p-dropdown-trigger-icon.p-icon {
+                    border: 1.5px solid $white-color;
+                    padding: 1px;
+                    border-radius: 50%;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                gap: 10px;
+                color: $primary-blue-color;
+                width: 200px;
+                justify-content: flex-end;
+                .save {
+                    background: $white-color;
+                    padding: 5px 20px;
+                    border-radius: 6px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+
+                .action {
+                    background: $white-color;
+                    padding: 5px 20px;
+                    border-radius: 6px;
+                    margin: 5px 0;
+                }
+            }
+        }
+
+        .popupFormBody {
+            width: 100%;
+            // height: 75%;
+            padding: 20px;
+
+            .popupFormFields {
+                /* padding: 15px; */
+                box-shadow: 0px 2px 2px $gray-border3-color;
+                width: 100%;
+                height: 100%;
+                border-radius: 15px;
+                border: 1px solid $gray-border3-color;
+
+                .bodyTitle {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 1%;
+
+                    .toggle {
+                        img {
+                            width: 13px;
+                            margin: 10px;
+                        }
+                    }
+
+                    .subTitle {
+                        @extend .popupheaderTitle
+                    }
+
+                }
+                .outerfield{
+                    margin: 15px 2%;
+                    width: 95%;
+                    display: flex;
+                    align-items: center;
+                    .formfields {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    width: 100%;
+                    // margin-right: 5px;
+                    gap: 5px;
+
+                    .p-inputtext {
+                        width: 95%;
+                    }
+
+                    .p-inputtext.ng-invalid.ng-touched {
+                        border: 1px solid $red-color;
+                    }
+                    .p-calendar {
+                        width: 95%;
+
+                        .p-inputtext {
+                            width: 100%;
+                        }
+                    }
+                }
+                .bin {
+                    img {
+                        width: 5%;
+                        margin-inline: 5px;
+                        width: 18px;
+                    }
+                }
+                }
+                
+                .formfieldsline2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    margin: 15px 2%;
+                    .dropdownField .p-dropdown{
+                        width: 250px;
+                    }
+                    .p-inputtext {
+                        width: 95%;
+                    }
+
+                    .p-inputtext.ng-invalid.ng-touched {
+                        border: 1px solid $red-color;
+                    }
+                    .p-calendar {
+                        width: 95%;
+
+                        .p-inputtext {
+                            width: 100%;
+                        }
+                    }
+                    .textSelectorContainor.ng-star-inserted {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        /* justify-content: space-around; */
+                        span.selection {
+                            border: 1px solid $gray-border3-color;
+                            padding: 10px 30px;
+                            border-radius: 31px;
+                            display: flex;
+                            align-items: center;
+                            margin: 0 10px;
+                            gap: 10px;
+                            span {
+                                font-weight: 600;
+                                color: $gray-border3-color;
+                            }
+                        }
+                    }
+                }
+                .formfieldsline3 {
+                    margin-block: 20px;
+                    margin: 15px 2%;
+
+                    input.p-inputtext.p-component.p-element.comments {
+                        width: 100%;
+                    }
+
+                    .checkbox {
+                        margin: 10px 0px;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: 5px;
+                    }
+                }
+
+            }
+        }
+        .required {
+            color: red;
+            margin-inline: 2px;
+        }
+    }
+}

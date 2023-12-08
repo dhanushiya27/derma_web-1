@@ -1,0 +1,82 @@
+<app-profile-header></app-profile-header>
+<p-tabView class="formWizard">
+    <p-tabPanel header="Vitals" headerClass="vitals">
+        <ng-template pTemplate="header">
+            <div class="wizardBg">
+                <div class="wizardCircle vital">
+                    <img src="../../../assets/images/vitalIcon.png" class="centeredImage" />
+                </div>
+                <span class="header"> Vitals </span>
+            </div>
+        </ng-template>
+        <div class="p-field">
+            <app-vitals></app-vitals>
+        </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Episodes" headerClass="episodes">
+        <ng-template pTemplate="header">
+            <div class="wizardBg episode">
+                <div class="wizardCircle">
+                    <img src="../../../assets/images/episodeIcon.png" class="centeredImage" />
+                </div>
+
+                <span class="header"> Episodes </span>
+
+            </div>
+        </ng-template>
+
+        <div class="p-field">
+            <app-episodes></app-episodes>
+        </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="Problems" headerClass="problems">
+        <ng-template pTemplate="header">
+            <div class="wizardBg problem">
+                <div class="wizardCircle">
+                    <img src="../../../assets/images/problemIcon.png" class="centeredImage" />
+                </div>
+                <span class="header"> Problems </span>
+            </div>
+        </ng-template>
+        <div class="p-field">
+            <app-problems></app-problems>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Orders" headerClass="orders">
+        <ng-template pTemplate="header">
+            <div class="wizardBg">
+                <div class="wizardCircle">
+                    <img src="../../../assets/images/ordersIcon.png" class="centeredImage" />
+                </div>
+
+                <span class="header"> Orders </span>
+
+            </div>
+        </ng-template>
+        <div class="p-field">
+            <app-orders></app-orders>
+        </div>
+    </p-tabPanel>
+
+    <p-tabPanel header="doc" headerClass="doc">
+        <ng-template pTemplate="header">
+            <div class="wizardBg {{selectedForm.fName}}">
+                <div class="wizardCircle"> 
+                    <img src="../../../assets/images/docFormIcon.png" class="centeredImage" />
+                </div>
+                <span class="header last"> {{ this.routeData.data.formName }} </span>
+            </div>
+        </ng-template>
+        <div class="p-field" *ngIf="this.routeData.data.formName  == 'Dermatology General Form'">
+            <app-dermatology></app-dermatology>
+        </div>
+        <div class="p-field" *ngIf="this.routeData.data.formName  == 'Fractional CO2'">
+            <app-fractional></app-fractional>
+        </div>
+        <div class="p-field" *ngIf="this.routeData.data.formName == 'Microdermabrasion'">
+            <app-microdermabrasion></app-microdermabrasion>
+        </div>
+    </p-tabPanel>
+</p-tabView>

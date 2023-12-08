@@ -1,0 +1,83 @@
+@import "./../../../../assets/theme/theme-variable.scss";
+
+
+.summaryOtrContainer{
+    .headerOtr{
+        display: flex;
+        justify-content:space-between;
+        background-color: $primary-blue-color;
+        padding: 20px;
+        align-items: center;
+        .summaryIcon, .closeIcon{
+            width: 30px;
+            cursor:pointer;
+        }
+        .summaryHeader{
+            font-family: "Poppins-SemiBold";
+            color:$white-color;
+            font-size: $sz-16-font;
+        }
+    }
+    .header{
+        font-family: "Poppins-Bold";
+        font-size: $sz-18-font;
+        margin-bottom:5px;   
+    }
+    .headerLine{
+        font-family: "Poppins-Bold";
+        text-decoration: underline;
+        margin:15px 0px;     
+    }
+    .leftAlign1{margin-left: 20px;}
+    .leftAlign2{margin-left: 40px;}
+    .leftAlign3{margin-left: 60px;}
+    .leftAlign4{margin-left: 80px;}
+    .leftAlign5{margin-left: 100px;}
+    .leftAlign6{margin-left: 120px;}
+    .headerCenter{
+        text-align: center;
+        padding:20px;
+    }
+    .headerBlue{
+        font-family: "Poppins-SemiBold";
+        color:$primary-blue-color;
+        font-size: $sz-18-font;
+        line-height: 30px;
+    }
+    .headerBlack{
+        font-family: "Poppins-SemiBold";
+        color:$primary-black-color;
+        font-size: $sz-18-font;
+        line-height: 30px;
+    }
+    .datablack{
+        font-family: "Poppins-Regular";
+        color:$primary-black-color;
+        font-size: $sz-16-font;
+        font-weight: $semi-bold-font;
+        line-height: 30px;
+    }
+    .summaryContentOtr{
+        padding:20px 80px;
+        .commentContainer{
+            .commentList{
+                font-family: "Poppins-Regular";
+                font-size: $sz-16-font;
+                line-height: 30px;
+                color:$primary-black-color;
+            }
+        }
+        .summaryContentContainer{
+            .examinationOtr{
+                .examinationBodyImage{
+                    width: 40%;
+                    padding:10px;
+                }
+                .examinationFaceImage{
+                    width:25%;
+                    padding:10px;
+                }
+            }
+        }
+    }
+}

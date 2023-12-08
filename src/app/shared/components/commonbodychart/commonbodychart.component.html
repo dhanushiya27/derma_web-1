@@ -1,0 +1,20 @@
+<!-- Developer Name : Varsha 
+Module Name: Body chart-->
+
+<div class="bodyCard">
+    <p-card class="card" *ngFor="let bodyChart of bodyChartData">
+        <div class="cardHeader">
+            <p class="cardTitle">{{bodyChart.chartName}}</p>
+            <img class="refreshIcon" src="assets/icons/refresh-orange.svg">
+        </div>
+        <div class="cardContentOtr">
+            <div class="imageOtr">
+                <img class="chartImage" src="{{bodyChart.chartImage}}">
+            </div>
+            <div class="infoOtr">
+                <textarea class="commontextArea infoArea" pInputTextarea  placeholder="Additional Information" formControlName="notes"></textarea>
+            </div>
+        </div>
+    </p-card>
+</div>
+

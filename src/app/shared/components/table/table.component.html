@@ -1,0 +1,61 @@
+<p-table class="{{header}}" [ngClass]="header=='orders'? 'borderRadius' : ''" [value]="tableData" [columns]="columns" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr class="tableHeaderOtr" [ngClass]="{
+        'tableHeaderOtrSecondary': design =='secondary'
+      }">
+      <ng-container *ngFor="let col of columns">     
+        <th class="tableHeader" *ngIf="col?.display">{{col.header }}</th>
+      </ng-container>     
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns" let-rowIndex="rowIndex">
+    <tr>
+      <!-- if header vital have to add aditional class to show abnormal values -->
+      <ng-container *ngFor="let col of columns; let i = index">
+    
+      <td  *ngIf="col?.display" [ngClass]="[col.align == 'right' ? 'right': 'left']" [ngClass]="{
+        'danger' : ( col.field =='respiratoryRate' && header == 'vital' && rowData?.respiratoryRateAbnormal == true || 
+        col.field =='heartRate' && header == 'vital' && rowData?.heartRateAbnormal == true ||
+        col.field =='oxygenSaturation' && header == 'vital' && rowData?.oxygenSaturationAbnormal == true ||
+        col.field =='temperature' && header == 'vital' && rowData?.temperatureAbnormal == true ||
+        col.field =='bloodGloucose' && header == 'vital' && rowData?.bloodGloucoseAbnormal == true ||
+        col.field =='bloodPressure' && header == 'vital' && rowData?.bloodPressureAbnormal == true)
+        }" class="tableLable tablelabletext row-{{i}} {{col.field}}" >
+
+        <span *ngIf="col.field !=='action' && col.field !=='status'&& col.field !=='BillingStatus'"> {{rowData[col.field]}} </span>
+
+        <!-- Medical code List Table -->
+        <br><span *ngIf="col.field =='date' && header == 'problems' && rowData['occurance'] != ''"> Occurance :<span class="medicalDatacolor"> {{rowData['occurance']}}</span> </span>
+        
+        <div class="displayTableValues">
+            <span *ngIf="col.field=='title'&& header=='problems'"><span *ngIf="rowData['outcome']!=''">Outcome:</span><span class="medicalDatacolor">{{rowData['outcome']}}</span></span>
+            <span *ngIf="col.field=='title'&& header=='problems'"><span *ngIf="rowData['problemType']!=''">Problem Type:</span><span class="medicalDatacolor">{{rowData['problemType']}}</span></span>
+            <span *ngIf="col.field=='title'&& header=='problems'"><span *ngIf="rowData['severity']!=''">Severity:</span> <span class="medicalDatacolor">{{rowData['severity']}}</span></span>
+      </div>
+
+
+        <span *ngIf="header == 'orders'">
+          <img *ngIf="col.field =='BillingStatus'&& rowData[col.field] =='sr'" src="assets/icons/SrIcon-red.svg" (click)="report(rowData)"/>
+        </span>
+
+        <span  *ngIf="col.field == 'status' && header == 'orders'" class="status"  [ngClass]="{
+          'active': rowData[col.field] === 'Ordered','removed': rowData[col.field] === 'Revoked'}">{{ rowData[col.field] }}
+        </span>
+ 
+        <span class="status" *ngIf="col.field == 'status' && header!== 'orders'" [ngClass]="{
+ 
+        'active': rowData[col.field] === 'Active','removed': rowData[col.field] === 'Removed',
+ 
+        'inactive': rowData[col.field] === 'Inactive'}">{{ rowData[col.field] }}</span>
+
+
+        <img class="editTableIcon" *ngIf="col.field =='action' && rowData[col.field] =='edit'" src="assets/icons/editIcon.png"
+          (click)="edit(rowData)" />
+          <img *ngIf="col.field =='action' && rowData[col.field] =='report'" src="assets/icons/reportIcon.png" (click)="report(rowData)"/>
+          <img *ngIf="col.field =='action' && rowData[col.field] =='none'" src="assets/icons/orderTableNoAction.svg" (click)="report(rowData)"/>
+          <button pButton type="button" *ngIf="col.field =='action' && rowData[col.field] =='Action'" class="actionBtn" (click)="clickAction($event)" label="Actions" ></button>
+      </td>
+    </ng-container>
+    </tr>
+  </ng-template>
+</p-table>

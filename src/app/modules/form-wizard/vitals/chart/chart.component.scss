@@ -1,0 +1,109 @@
+@use '../../../../../assets/commonStyle/commonStyle.scss' as *;
+@use "../../../../../assets/theme/theme-variable.scss" as *;
+
+
+body {
+    width: 100%;
+}
+
+
+.mainContainer{
+    overflow: hidden;
+    margin: 30px;
+    .btnContainer{
+        padding-bottom:30px;
+        .btnOtr{
+            .submitBtn{
+               .btnIcon{
+                    width: 25px;
+                    margin-right: 10px;
+               }
+            }
+        }
+    }
+    .chartOtrContainer{
+        padding-top:30px;
+        .chartContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 50px;
+            .chartContainerInner{
+                padding:20px;
+                .chartInnerImageOtr{
+                    display: flex;
+                    margin-bottom: 15px;
+                }
+                .chartInnerImage{
+                    display: flex;
+                    align-items: center;
+                    margin-right: 30px;
+                    .chartImage{
+                        height: 25px;
+                        width: 25px;
+                        margin-right: 8px;
+                    }
+                    .chartText{
+                        color:$primary-black-color;
+                        font-size: $sz-16-font;
+                        font-family:'Poppins-SemiBold';            
+                    }
+                    .titleImage1{
+                        background-color:$green-shade2-color;
+                        width: 40px;
+                        height: 15px;
+                        margin-right: 8px;
+                        border-radius: 5px;
+                    }
+                    .titleImage2{
+                        background-color:$yellow-shade1-color ;
+                        width: 40px;
+                        height: 15px;
+                        margin-right: 8px;
+                        border-radius: 5px;
+                    }
+                    .titleText{
+                        color:$black-shade1-color;
+                        font-size: $sz-16-font;
+                        font-family:'Poppins-Regular'; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+::ng-deep{
+    .mainContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .btnContainer{
+            .btnOtr{
+                .p-button {
+                    color:$white-color;
+                    background:$blue-shade10-color;
+                    border:1px solid $blue-shade10-color;
+                    font-family: 'Poppins-SemiBold';
+                    font-size: $sz-18-font;
+                    padding: 15px;
+                    cursor: pointer;
+                }
+                .p-button:hover{
+                    background:$blue-shade3-color;
+                    border:1px solid $blue-shade3-color;
+                }
+            }
+        }
+        .chartOtrContainer{
+            .chartContainer{
+                canvas {
+                    height:350px !important;
+                    width: 600px !important;
+                }
+            }
+           
+        }
+    }
+}
+
+

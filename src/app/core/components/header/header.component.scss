@@ -1,0 +1,102 @@
+@use  '../../../../assets/commonStyle' as *;
+.mainContainer{
+   width: 100%;
+   .subContainer{
+    background-image:$gradient-shade1-color ;
+    padding: 10px;
+    width: 100%;
+    form.formOuter {
+        display: flex;
+        gap: 40px;
+        justify-content: space-around;
+    }
+    .headerSection.dateFormate {
+        gap: 10px !important;
+    }
+
+    
+    .headerSection {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img.image {
+            max-width: 220px;
+        }
+
+       
+::ng-deep{
+
+
+        p-dropdown.dremadropdown{
+            color: $primary-blue-color;
+            font-size: $sz-16-font;
+            font-family: "Poppins-SemiBold";
+            .p-dropdown span.p-dropdown-label{
+                color: $primary-blue-color;
+                font-size: $sz-16-font;
+                font-family: "Poppins-SemiBold";
+            }
+            .p-dropdown.p-component {
+                padding: 0 10px;
+                width: 220px;
+            }
+
+            .p-dropdown-trigger {
+                background-image: url('../../../../assets/icons/dropdown-arrow.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 24px;
+                chevrondownicon {
+                    color: transparent;
+                }
+            }
+        }
+
+        p-calendar input {
+            width: 160px;
+            text-align: left;
+            font-size: $sz-16-font;
+            font-family: "Poppins-SemiBold";
+            background-image: url('../../../../assets/icons/calender-Icon.svg');
+            background-repeat: no-repeat;
+            background-size: 22px;
+            background-position: top 13px right 12px;
+            color: $primary-blue-color;
+        }
+    }
+    h1.outpatients {
+        font-size: $sz-20-font;
+        color:$white-color;
+    }
+    button.btnSec {
+        padding: 7px 30px;
+        background-color: transparent;
+        border: 1px solid $white-color;
+        border-radius: 4px;
+        font-size: $sz-16-font;
+        color: $white-color;
+        font-family: "Poppins-Regular";;
+        cursor: pointer;
+    }
+    button.arrowbtnSec {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+  
+    .profileName {
+        display: flex;
+        gap: 15px;
+  
+            .Logoutimage{
+              cursor: pointer;
+            }
+        
+    }
+    img.notifiimage {
+        max-width: 28px;
+    }
+}
+} 
+
+}

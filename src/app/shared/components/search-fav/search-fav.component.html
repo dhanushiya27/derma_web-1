@@ -1,0 +1,64 @@
+<div class="searchForm">
+  <div class="searchFormOtr">
+    <div class="searchBar">
+      <div class="search-bar">
+        <div class="search-icon-container">
+          <img src="assets/icons/searchIconBlack.svg" alt="Search Icon">
+        </div>
+        <input type="text" pInputText placeholder="Search" [(ngModel)]="searchTerm" autocomplete="off" (input)="filterData()"/>
+      </div>
+    </div>
+
+    <div class="favList">
+      <div class="titleBar">
+        <div>
+          <p class="tabheader">Favourite List</p>
+          <div class="favListExpand" [@expandCollapse]="isFavListExpanded ? 'expanded' : 'collapsed'">
+            <div class="radioBtnOtr" *ngFor="let fav of favList">
+              <p-radioButton class="rounded" name="groupname" [value]="fav.id"
+              [(ngModel)]="selectedFav"></p-radioButton>
+              <p>{{fav.text}}</p>
+              <div class="favListOtr">
+                <img class="appImage"
+                  [src]="fav.isFavourite ?  'assets/icons/starFilled.svg' :'assets/icons/starUnfilled.svg'">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+        <div (click)="toggleExpandCollapseFav()">
+          <img [src]="isFavListExpanded ?  'assets/icons/expandDown.svg':'assets/icons/upArrow.svg' " alt="">
+        </div>
+      </div>
+
+    </div>
+    <div class="mcList">
+      <div class="titleBar">
+        <div>
+          <p class="tabheader">{{header == 'orderForm'? 'Orders List' :'Medical Code List'}}</p>
+          <div class="expand" [@expandCollapse]="isContentExpanded ? 'expanded' : 'collapsed'">
+            <div class="radioBtnOtr" *ngFor="let item of filteredData">
+              <p-radioButton class="rounded" name="groupname"  [value]="item.id"
+              [(ngModel)]="selectedRadioButton"
+              (ngModelChange)="onRadioButtonChange(item)"></p-radioButton>
+              <p>{{item.text}}</p>
+
+              <div class="favListOtr">
+                <img class="appImage"
+                  [src]="item.isFavourite ?  'assets/icons/starFilled.svg' :'assets/icons/starUnfilled.svg'"
+                  (click)="toggleFavourite(item)">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div (click)="toggleExpandCollapse()">
+          <img [src]="isContentExpanded ?  'assets/icons/expandDown.svg':'assets/icons/upArrow.svg' " alt="">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

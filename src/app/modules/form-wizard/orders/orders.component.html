@@ -1,0 +1,33 @@
+<div class="orderTabContainer">
+    <div class="orderHeader" >
+        <div class="addOrder">
+            <img *ngIf="addFlag == true" src="assets/icons/leftArrow.svg" class="leftArrow" (click)="addOrders('back')">
+            <div class="margin">
+                <p class="orderTitle">Orders</p>
+            </div>
+        </div>
+        <div>
+            <img *ngIf="addFlag == false" src="assets/icons/addIcon.svg" class="addIcon" (click)="addOrders('add')">
+            <img *ngIf="addFlag == true" src="assets/icons/reportIcon.png" class="reportIcon" >
+        </div> 
+    </div>
+    <div *ngIf="addFlag == false">
+        <div class="outerTabContainer">
+            <div class="outerHeader">
+                All
+            </div>
+        </div>
+        <div class="tabContainer">
+            <app-tabs (tabSelection)="headerChange($event)"  (actionClicked)="actionOrders(procedures)" [tabDetails]="items" [header]="'orders'"></app-tabs>
+        <div *ngIf="showAdditionalButtons" class="actionOtr">
+            <!-- Additional buttons go here -->
+            <button pButton type="button"  class="actionBtn"  label="Start Time" ></button>
+            <button pButton type="button"  class="actionBtn"  label="Revoke Order" (click)="showAlert('','add')"></button>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="addFlag == true">
+        <app-add-orders [orderIndex]="indexValue" ></app-add-orders>
+    </div>
+   
+</div>

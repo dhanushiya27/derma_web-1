@@ -1,0 +1,99 @@
+<div class="popupFormContainer">
+    <form [formGroup]="myForm" (ngSubmit)="onsubmit()">
+        <div class="popupFormHeader">
+            <div class="heading">{{title}}</div>
+            <div class="headerDropdown" *ngIf="header == 'orderMedicUpper'||header == 'orderMedicLower'">
+                <span class="p-float-label">
+                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Discount Type"
+                        optionLabel="name" inputId="float-label"></p-dropdown>
+                    <label class="floatlabel" for="float-label">Discount Type</label>
+                </span>
+            </div>
+            <div class="buttons">
+                <div *ngIf="header == 'orderMedicUpper'||header == 'orderLabUpper'" class="save" (click)="onsubmit()">
+                    <img [src]="'assets/icons/saveBlueIcon.svg'" />
+                    Save
+                </div>
+                <div class="action"  *ngIf="header !== 'orderLabUpper'">Action</div>
+            </div>
+        </div>
+        <div class="popupFormBody">
+            <div class="popupFormFields">
+                <div class="bodyTitle">
+                    <div class="toggle" (click)="toggleForm()">
+                        <img [src]="openFlag ?  'assets/icons/expandDown.svg':'assets/icons/upArrow.svg' " alt="">
+                    </div>
+                    <div class="subTitle">{{subtitle}}</div>
+
+                </div>
+                <div *ngIf="openFlag">
+                    <div class="outerfield">
+                       <div class="formfields" *ngIf="inputFields?.length > 0">
+                        <div *ngFor="let field of inputFields; let i = index">
+                            <span class="p-float-label" *ngIf="field.line == 1 && field.type == 'input'">
+                                <input pInputText [id]="field.name" [name]="field.name"
+                                    [formControlName]="field.name" />
+                                <label class="floatlabel" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                            </span>
+                            <span *ngIf="field.line == 1 && field.type == 'calendar'">
+                                <p-calendar [id]="field.name" [showButtonBar]="true"
+                                    [formControlName]="field.name"></p-calendar>
+                            </span>
+                            <span class="time" *ngIf="field.line == 1 && field.type == 'time'">
+                                <p-calendar [id]="field.name" [timeOnly]="true" timeFormat="HH:mm A" hourFormat="12"
+                                    [showTime]="true" [formControlName]="field.name"></p-calendar>
+                            </span>
+                        </div>
+                        
+                    </div> 
+                    <span class="bin" (click)="remove()">
+                            <img [src]="'assets/icons/redBin.svg'" />
+                    </span>
+                    </div>
+                    
+
+                    <div class="formfieldsline2" *ngIf="inputFieldsLine2?.length > 0">
+                        <div *ngFor="let field of inputFieldsLine2; let i = index">
+                            <span class="p-float-label" *ngIf="field.line == 2 && field.type == 'input'">
+                                <input pInputText [id]="field.name" [name]="field.name"
+                                    [formControlName]="field.name" />
+                                <label class="floatlabel" [for]="field.name">{{ field.name }}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                            </span>
+                            <span class="p-float-label" *ngIf="field.line == 2 && field.type == 'dropdown'">
+                                <p-dropdown class="dropdownField" [options]="field.option" [formControlName]="field.name"
+                                    [placeholder]="field.name" [optionLabel]="field.optionLabel" inputId="float-label" [optionValue]="field.optionValue"></p-dropdown>
+                                <label class="floatlabel" for="float-label">{{field.name}}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                            </span>
+                            <span *ngIf="field.line == 2 && field.type == 'selector'" class="textSelectorContainor">
+                                <span class="textSelector">Requested Prax...</span>
+                                <span class="selection">
+                                    <img [src]="'assets/icons/docIconGrey.svg'" alt="">
+                                    <span>PAT - 564754</span>
+                                </span>
+                            </span>
+                            <span class="time" *ngIf="field.line == 2 && field.type == 'time'">
+                                <p-calendar [id]="field.name" [timeOnly]="true" timeFormat="HH:mm A" hourFormat="12"
+                                    [showTime]="true" [formControlName]="field.name"></p-calendar>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="formfieldsline3" *ngIf="inputFieldsLine3?.length > 0">
+                        <div *ngFor="let field of inputFieldsLine3; let i = index">
+                            <div class="checkbox" *ngIf="field.line == 3 && field.type == 'checkbox'">
+                                <p-checkbox [formControlName]="field.name" [value]="field.name"
+                                    inputId="check"></p-checkbox>
+                                <label for="check">{{field.name}}<span *ngIf="field.required == true" class="required">{{'*'}}</span></label>
+                            </div>
+                            <input *ngIf="field.line == 3 && field.type == 'input'" [id]="field.name"
+                                [name]="field.name" [formControlName]="field.name" class="comments" type="text"
+                                pInputText [placeholder]="field.name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

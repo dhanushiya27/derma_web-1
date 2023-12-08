@@ -1,0 +1,159 @@
+@use "../../../../assets/theme/theme-variable.scss" as *;
+@use "../../../../assets/commonStyle/commonStyle.scss" as *;
+ 
+.appoinmentsDetailsHeader {
+    background-color: #1855B0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    .appDetailHeadertext{
+        color: $white-color;
+        // margin-left: 10px;
+        font-family: 'Poppins-Medium';
+    }
+    .divrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+ 
+.tabSwitchingView {
+    margin-top: 26px;
+}
+ 
+ 
+.futureAppointmentView {
+    margin-bottom: 1;
+    display: flex;
+    row-gap: 12px;
+    justify-content: center;
+    column-gap: 14px;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+ 
+::ng-deep {
+    // css for list tab start
+    .appoinmentsDetailsView .p-tabview-nav-container {      
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .appoinmentsDetailsView .p-tabview-nav,
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav-content,
+    .appoinmentsDetailsView .p-tabview-nav-container {
+        width: 100% !important;
+    }
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li.p-highlight,
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li {
+        margin-left: 0 !important;
+    }
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li {
+        width: 50% !important;
+        a {
+            .tab-header{
+                margin: 10px 0px;
+                display: flex;
+                span {
+                    padding: 0px 10px;
+                    color:$black-color;
+                    font-family: 'Poppins-Regular';
+                }
+            }
+        }
+    }
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li.p-highlight
+    {
+        a {
+            .tab-header{
+                span {
+                    color:$white-color;
+                }
+            }
+        }
+    }
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .appoinmentsDetailsView .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+        background: #1C56AE;
+        border-color: #1C56AE;
+    }
+    // .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    //     border: solid #dee2e6;
+    //     border-width: 0 0 2px 0;
+    //     border-color: transparent transparent #dee2e6 transparent;
+    //     background: #ffffff;
+    //     color: #6c757d;
+    //     padding: 1.25rem;
+    //     font-weight: 700;
+    //     /* border-top-right-radius: 6px; */
+    //     /* border-top-left-radius: 6px; */
+    //     transition: box-shadow 0.2s;
+    //     margin: 0 0 -2px 0;
+    // }
+}
+ 
+::ng-deep{
+    .p-calendar .p-inputtext {
+        border: 1px solid $input-border-color !important;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: $sz-18-font;
+        color: $primary-black-color;
+        font-family: 'Poppins-Medium';
+        // width: 380px;
+        resize: none;
+    }
+    p-calendar.backgroundimg input.p-inputtext{
+        background-image: url(../../../../assets/icons/calendarBlue.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: right 14px top 13px;
+        border-radius: 5px;
+    }
+ 
+    p-dropdown.dropdownFloating .p-dropdown {
+        border: 1px solid #B7B7B7 !important;
+        padding: 9px 30px;
+        border-radius: 5px;
+        font-size: 18px;
+        /* color: #1E1D1D; */
+        font-family: "Poppins-Medium";
+        /* width: 100%; */
+    }
+    p-dropdown.dropdownFloating .p-dropdown span {
+        // padding: 1px 6px;
+        color: #1E1D1D;
+        font-size: 18px;
+        color: #1E1D1D;
+        font-family: "Poppins-Medium";
+    }
+ 
+    .tabSwitchingView .p-tabview .p-tabview-panels {
+        background: #ffffff;
+        padding:10px 0px 0px 0px;
+        border: 0 none;
+        color: #495057;
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+}
+ 
+.commomBtn {
+    width : 120px;
+    height : 44px;
+    // margin-right : 20px;
+    background-color : #1D57AD;
+    font-family: "Poppins-Medium";
+}
+.commomBtn.resetBlue {
+    background-color: white;
+    border: 1px solid #1D57AD;
+    color: #1D57AD;
+}

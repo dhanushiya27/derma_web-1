@@ -1,0 +1,13 @@
+<div *ngIf="viewVitals" class="otrReport">
+    <div class="report">
+      <img src="assets/icons/vitalblue.svg">
+      <p class="AppoinmentVisiterName">Ahmad Al Mazyd</p>
+    </div>
+    <div class="margin" *ngFor="let report of viewVitals">
+      <h2 class="commonLabel">
+        {{ report.label }}:
+        <span class="commonLabelThin">  {{ report.addQuotes ? report.value : report.value  }}</span>
+      </h2>
+    </div>
+</div>
+  

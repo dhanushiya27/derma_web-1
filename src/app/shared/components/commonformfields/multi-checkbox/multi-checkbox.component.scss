@@ -1,0 +1,7 @@
+@use "../../../../../assets/commonStyle" as *;
+
+::ng-deep {
+    .radioInnerSecForm .radioBtnSec p-radiobutton.rounded label.p-radiobutton-label {
+        left: 44px !important;
+    }
+}

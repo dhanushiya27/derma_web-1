@@ -1,0 +1,42 @@
+<!-- Developer Name : Rajaha Muthiaha 
+Module Name: Episodes -->
+
+
+<div *ngIf="currentPage == 'list'">
+    <div class="episodesView" >
+        <div class="margin">
+            <p class="tabheader">Episodes</p>
+        </div>
+        <div>
+            <img src="../../../../assets/icons/addIcon 2.png" class="addIcon" (click)="navtoadd()">
+        </div> 
+    </div>
+    <div class="p-field">
+        <app-table (editDataEvent) = editEpisode($event) [tableData]="tableData" [columns]="cols" [header]="'episode'" [design]="'primary'" ></app-table>
+    </div>
+</div>
+
+<div *ngIf="currentPage == 'add'">
+    <div class="episodesView">
+        <div class="margin">
+            <h2 class="commonHeader"><img class="backIcon"  (click)="navtoepisode()" src="assets/icons/blackbackicon.svg">Episodes
+            </h2>
+        </div>
+        <div class="margin"> <button pButton type="button" class="commomBtn" label="Click" (click)="submitForm()"><img src="assets/icons/saveicon.svg">Save</button></div>
+    </div>
+</div>
+<app-add-edit-episodes #episodeRef *ngIf="currentPage == 'add'"></app-add-edit-episodes>
+
+<div *ngIf="currentPage == 'edit'">
+    <div class="episodesView">
+      <div class="margin">
+        <h2 class="commonHeader"><img class="backicon" (click)="navtoepisode()" src="assets/icons/blackbackicon.svg">Episodes</h2>
+      </div>
+      <div class="marginOuter">
+      <div class="margin"> <button pButton type="button" class="commomBtn" (click)="updateEpisode()" label="Click">
+        <img src="assets/icons/saveicon.svg" >Update</button>
+     </div>
+    </div>
+    </div>
+    <app-add-edit-episodes  [formData]="formValues" #episodeRef></app-add-edit-episodes>
+</div>

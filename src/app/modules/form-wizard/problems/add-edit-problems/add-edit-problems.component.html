@@ -1,0 +1,107 @@
+
+
+
+<div class="parentTableData" *ngIf="editedData">
+    <div>
+      <h2></h2>
+      <h2></h2>
+    </div>
+    <div class="data">
+      <h2 class="commonLabel">Medical Code / Description</h2>
+      <h2 class="commonLabel"><span>{{ editedData.title }}</span></h2>
+    </div>
+    <div class="data">
+      <h2 class="commonLabel"><span class="statusTitle">Status</span></h2>
+      <div [ngClass]="{
+        'margin': true,
+        'active': editedData.status === 'Active',
+        'removed': editedData.status === 'Removed',
+        'inactive': editedData.status === 'Inactive'
+      }">
+        {{ editedData.status }}
+      </div>
+    </div>
+    <div class="data">
+      <h2 class="commonLabel">Start Date</h2>
+      <h2 class="commonLabel"><span>{{ editedData.date}}</span></h2>
+    </div>
+    <div class="data">
+      <h2 class="commonLabel">Creator</h2>
+      <h2 class="commonLabel"><span>{{ editedData.creator }}</span></h2>
+    </div>
+</div>
+
+  
+<div class="addOrEdit" [formGroup]="addOrEditProblems">
+    
+ 
+   
+    <div class="addOrEditForm">
+        <div class="otrDiv">
+            <div class="div1">
+                <div class="dropdownfloting">
+                    <label class="floatingLable">Status</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="status" optionValue="name"
+                        optionLabel="name"  formControlName="problemStatus"></p-dropdown>
+                  </div>
+                  <div class="dropdownfloting">
+                    <label class="floatingLable">Outcome</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="outcome" optionValue="name"
+                        optionLabel="name"  formControlName="outcome"></p-dropdown>
+                  </div>
+                  <div class="dropdownfloting">
+                    <label class="floatingLable">Problem Type</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="problemType" optionValue="name"
+                        optionLabel="name"  formControlName="problemType"></p-dropdown>
+                  </div>
+                  <div class="dropdownfloting">
+                    <label class="floatingLable">Occurance</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="occurance" optionValue="name"
+                        optionLabel="name"  formControlName="occurance"></p-dropdown>
+                  </div>
+                  <div class="dropdownfloting">
+                    <label class="floatingLable">Severity</label>
+                    <p-dropdown class="dropdownFloating"   appendTo="body" [options]="severity" optionValue="name"
+                        optionLabel="name"  formControlName="severity"></p-dropdown>
+                  </div>
+            </div>
+            <div class="div2">
+                <div class="commonfloting">
+                    <label class="floatingLable">Destination</label>
+                    <input type="text" pInputText  class="commonInput" formControlName="destination" />
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">Body Site Code </label>
+                    <input type="text" pInputText  class="commonInput" formControlName=" bodySiteCode"/>
+                  </div>
+                  <div class="commonfloting">
+                    <label class="floatingLable">Referred By</label>
+                    <input type="text" pInputText  class="commonInput" formControlName=" referredBy"/>
+                  </div>
+                  
+
+                  <div class="commonfloting">
+                    <label class="floatingLable">Start Date</label>
+                    <p-calendar class="backgroundimg" formControlName="startDate" placeholder="MM/DD/YYYY">  
+                    </p-calendar>
+                </div>
+                <div class="commonfloting">
+                    <label class="floatingLable">End Date</label>
+                    <p-calendar class="backgroundimg" formControlName="endDate" placeholder="MM/DD/YYYY">
+                    </p-calendar>
+                </div>
+            </div>
+        </div>
+
+        <div class="margin"> 
+            <div  class="textareafloting">
+              <label class="floatingLable">Comment</label>
+              <textarea  class="commontextArea" pInputTextarea placeholder="Comments" formControlName="comments"></textarea>
+            </div>
+      </div>
+    </div>
+</div>
+
+<div>
+    
+</div>

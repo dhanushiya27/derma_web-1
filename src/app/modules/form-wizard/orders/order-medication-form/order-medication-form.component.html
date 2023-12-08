@@ -1,0 +1,18 @@
+<div class="orderMadicationContainer">
+    <div class="leftcontainer">
+        <div class="icon">
+            <img [src]="'../../../assets/icons/problemBack.svg'" />
+        </div>
+        <div class="searchFav">
+            <app-search-fav [allData]="medicationList" [header]="'orderForm'"/>
+        </div> 
+    </div>
+    <div class="rightcontainer">
+        <div class="popupForm">
+            <app-popup-form [dataField]="dataNewOrder" (formSubmition)="recivedDataNew($event)" [header]="'orderMedicUpper'"/>
+        </div>
+        <div class="popupForm">
+            <app-popup-form [dataField]="dataOrderHistroy" (formSubmition)="recivedDataHistory($event)" [header]="'orderMedicLower'"/>
+        </div>
+    </div>
+</div>

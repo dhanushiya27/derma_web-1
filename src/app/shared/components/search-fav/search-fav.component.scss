@@ -1,0 +1,136 @@
+@use '../../../../assets/commonStyle' as *;
+
+
+    .searchForm{
+        width: 70%;
+        height: auto;
+        padding: 10px;
+        margin: 20px;
+        background:$white-shade1-color ;
+        box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+        border-radius: 20px;
+        
+        .searchBar{
+            .search-bar{
+                display: flex;
+                align-items: center;
+                position: relative;
+                .search-icon-container {
+                    position: absolute;
+                    left: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                  }
+                input[type="text"] {
+                    width: 96%;
+                    margin: 10px;
+                    height: 55px;
+                    border-radius: 10px;
+                    padding-left: 40px;
+                }
+            }
+        }
+        .favList{
+            width: auto;
+            margin: 10px;
+            height: auto;
+            
+            .titleBar{
+                width: auto;
+                height: auto;
+                padding: 10px;
+                background:$white-shade1-color ;
+                box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                border-radius: 10px;
+                .tabheader {
+                    font-size: 16px;
+                    margin: 0;
+                    color: $primary-blue-color;
+                    font-family: "Poppins-SemiBold";
+                }
+                img{
+                    align-items: end;
+                    width: 20px;
+                    height: 20px;
+                }
+                .radioBtnOtr{
+                    display: flex;
+                    margin: 10px 0px 0px 0px;
+                    width: 100%;
+                    height: auto;
+                    margin: 10px;
+                    padding: 10px;
+                    background:$white-shade1-color ;
+                    box-shadow: 2px 4px 2px -3px  $gray-shade3-color;
+                    display: flex;
+                    align-items: flex-start;
+                    .favListOtr{
+                        margin-left: auto;
+                    }
+
+                    p-radiobutton.rounded{
+                        width: auto;
+                        margin-right: 10px;
+                    }
+                    .p-rating .p-rating-icon.p-rating-cancel {
+                        color: #ea5455;
+                        display: none;
+                    }
+                }
+            }
+        }
+        .mcList{
+            .titleBar{
+                width: auto;
+                height: auto;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                background:$white-shade1-color ;
+                box-shadow: 0px 0px 2px 0px $gray-shade3-color;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                .tabheader {
+                    font-size: 16px;
+                    margin: 0;
+                    color: $primary-blue-color;
+                    font-family: "Poppins-SemiBold";
+                }
+                img{
+                    align-items: end;
+                    width: 20px;
+                    height: 20px;
+                }
+                .radioBtnOtr{
+                    display: flex;
+                    margin: 10px 0px 0px 0px;
+                    width: 100%;
+                    height: auto;
+                    margin: 10px;
+                    padding: 10px;
+                    background:$white-shade1-color ;
+                    box-shadow: 2px 4px 2px -3px  $gray-shade3-color;
+                    display: flex;
+                    align-items: flex-start;
+                    .favListOtr{
+                        margin-left: auto;
+                    }
+                    p-radiobutton.rounded{
+                        width: auto;
+                        margin-right: 10px;
+                    }
+                    ::ng-deep .p-rating .p-rating-icon.p-rating-cancel {
+                        color: #ea5455;
+                        display: none;
+                    }
+                }
+               
+            }
+        }
+    }
+    
+

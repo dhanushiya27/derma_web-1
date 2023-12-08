@@ -1,0 +1,55 @@
+@import"../../../../assets/theme/theme-variable.scss";
+
+.tableHeaderOtrSecondary {
+    background-color: $white-color !important;
+    background-image: none !important;
+
+    .tableHeader {
+        color: $black-shade1-color;
+        
+    }
+}
+.editTableIcon{
+    cursor: pointer;
+}
+.actionBtn{
+    background-color: $primary-blue-color;
+    color: $white-color;
+    font-size: $sz-16-font;
+    font-family: "Poppins-Regular";
+    border: none;
+    width: 100px;
+    height: 40px;
+    padding: 10px 12px;
+}
+
+.medicalDatacolor{
+    color: $primary-blue-color;
+   margin-right: 1px;
+}
+.displayTableValues{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+// additiona css for vital table to show the column color variation
+::ng-deep {
+
+    .vital .p-datatable .p-datatable-tbody tr td.row-1,
+    .vital .p-datatable .p-datatable-tbody tr td.row-2,
+    .vital .p-datatable .p-datatable-tbody tr td.row-3,
+    .vital .p-datatable .p-datatable-tbody tr td.row-4,
+    .vital .p-datatable .p-datatable-tbody tr td.row-5 {
+        color: $green-shade1-color;
+    }
+
+    .vital .p-datatable .p-datatable-tbody tr td.danger {
+        color: red !important;
+    }
+    .borderRadius .p-datatable-wrapper {
+        border-radius: 20px;
+        border: 1px solid $gray-shade2-color;
+    }
+    .borderRadius .p-datatable {
+        padding: 12px 12px 12px 30px;
+    }
+}

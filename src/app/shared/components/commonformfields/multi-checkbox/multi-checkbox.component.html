@@ -1,0 +1,15 @@
+<div class="formSec">
+    <form class="form" [formGroup]="multiselectFrom" #myForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="radioInnerSecForm">
+            <h3 class="formHeader"> {{sectionTitle}} <img src="assets/icons/refresh-icon.svg" alt="Save"></h3>
+            <div class="radioBtnSec">
+                <p-checkbox class="rounded" name="selectedValue" value="Lancet" label="Lancet"
+                    formControlName="selectedValue" (click)="radioCheck($event)"></p-checkbox>
+                <p-checkbox class="rounded" name="selectedValue" value="Extractor" label="Extractor"
+                    formControlName="selectedValue" (click)="radioCheck($event)"></p-checkbox>
+                <p-checkbox class="rounded" name="selectedValue" value="Manual" label="Manual"
+                    formControlName="selectedValue" (click)="radioCheck($event)"></p-checkbox>
+            </div>
+        </div>
+    </form>
+</div>

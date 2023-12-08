@@ -1,0 +1,179 @@
+<!-- Developer Name : Varsha 
+Module Name: All Appointment -->
+
+<app-header></app-header>
+<div class="allAptmtContainer">
+    <div class="buttonContainer">
+        <div class="topLeftButtons">
+            <p-button class="allAppointmentOtr" [class.btnActive]="isAllAppointmentsActive"  (click)="setActiveTab('all')">
+                <img class="appImage blueIcon" src="assets/icons/Appointment-blue.svg">
+                <img class="appImage whiteIcon" src="assets/icons/AllAppointment.svg">
+                All Appointments
+            </p-button>
+            <p-button *ngIf="this.userRole!='Doctor'" class="practionerOtr" (click)="show('','add');setActiveTab('practitioner')" [class.btnActive]="isPractitionerAppointmentsActive">
+                <img class="practImage blueIcon"  src="assets/icons/practitioner-blue.svg">
+                <img class="practImage whiteIcon" src="assets/icons/practitioner-white.svg">
+                Practitioner Appointments
+            </p-button>
+        </div>
+        <!-- Commented on 29-11 told by Harish BA -->
+        <!-- <div>
+            <button class="top-right-btn">Service Units</button>
+        </div> --> 
+    </div>
+    
+    <div class="container">
+        <div class="searchInr">
+            <div class="searchbar">
+                <img class="searchIcon" src="assets/images/searchBar.png" alt="Search Icon">
+                <input type="text" placeholder="Search by Patient Name, NID or Iqama ID, Patient ID and Mobile Number" [(ngModel)]="searchTerm" (input)="onSearch()">
+                <img class="secondImage" src="assets/images/cancel.png" alt="Second Image"  (click)="clearSearch()">
+                <div class="separatorLine"></div>
+                <img class="thirdImage" src="assets/images/revert.png" alt="Third Image" (click)="clearSearch()">   
+            </div>
+            <div class="searchBtn">
+                <p-button class="timeBtn" (click)="toggleTimeSortOrder()">
+                    <img class="sortImage" [src]="isSortOrderTime ? 'assets/images/sort.png' : 'assets/icons/sortUp.svg'" alt="Sort Image">
+                    Time</p-button>
+                <p-button class="nameBtn" (click)="toggleNameSortOrder()">
+                    <img class="sortImage" [src]="isSortOrderName ? 'assets/images/sort.png' : 'assets/icons/sortUp.svg'" alt="Sort Image">
+                    Name</p-button>
+            </div>    
+        </div>
+        <div class="searchButtons">
+        <p-tabView>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                    <button class="btnTwo" pTooltip="All" tooltipPosition="bottom" (click)="onTabClick('All')">
+                        <img class="activeImage" src="/assets/icons/calendar-white.svg" alt="Icon 1">
+                        <img class="inActiveImage" src="/assets/icons/calendarBlue.svg" alt="Icon 1">
+                        {{this.originalAppointmentData.length}}</button>
+                </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo"  pTooltip="Completed" tooltipPosition="bottom" (click)="onTabClick('Completed')">
+                    <img class="activeImage" src="assets/icons/tick-white.svg" alt="Icon 2">
+                    <img class="inActiveImage" src="assets/images/Tick.png" alt="Icon 2">
+                    {{ this.completed.length }}</button>
+            </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo" pTooltip="InProgress" tooltipPosition="bottom" (click)="onTabClick('InProgress')">
+                    <img class="activeImage" src="assets/icons/doctor-white.svg" alt="Icon 3">
+                    <img class="inActiveImage" src="assets/images/doctor.png" alt="Icon 3">
+                    {{ this.inProgress.length }}</button>
+            </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo" pTooltip="Arrived" tooltipPosition="bottom" (click)="onTabClick('Arrived')">
+                    <img class="activeImage" src="assets/icons/chair-white.svg" alt="Icon 4">
+                    <img class="inActiveImage" src="assets/images/chair.png" alt="Icon 4">
+                    {{ this.arrived.length }}</button>
+            </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo" pTooltip="Scheduled and Open" tooltipPosition="bottom" (click)="onTabClick('ScheduledAndOpen')">
+                    <img class="activeImage" src="assets/icons/clock-white.svg" alt="Icon 5">
+                    <img class="inActiveImage" src="assets/images/timer.png" alt="Icon 5">
+                    {{this.scheduled.length }}</button>
+            </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo" pTooltip="No Show" tooltipPosition="bottom" (click)="onTabClick('NoShow')">
+                    <img class="activeImage" src="assets/icons/cross-white.svg" alt="Icon 6">
+                    <img class="inActiveImage" src="assets/images/cancel.png" alt="Icon 6">
+                    {{ this.noShow.length}}</button>
+            </ng-template>
+            </p-tabPanel>
+            <p-tabPanel>
+                <ng-template pTemplate="header">
+                <button class="btnTwo">
+                    <img class="activeImage" src="assets/icons/video-white.svg" alt="Icon 7">
+                    <img class="inActiveImage" src="assets/images/video.png" alt="Icon 7">0</button>
+            </ng-template>
+            </p-tabPanel>
+        </p-tabView>
+        </div>
+
+        <!-- Card Starts -->
+        <div class="cardOtrContainer">
+            <div class="cardContainer" *ngFor="let data of allAppointmentData">
+                <p-card>
+                    <div class="cardContent">
+                        <div class="imgOtrContainer">
+                            <div class="profileImgOtr">
+                                <img class="profileImg" [ngStyle]="{'border-color': data.isMale ? '#1955AF' : '#FE7AB6'}" src="{{data.profileImg}}" (click)="navToPatientInfo(data)" >
+                                <div class="profDescriptions">
+                                    <div class="profDescOtr">
+                                        <img class="vipIcon" *ngIf="data.isvip" src="{{data.vipIcon}}">
+                                        <p [ngClass]="{'profDescA': data.isvip, 'profDescB': !data.isvip, 'profDescG' : !data.isMale }" class="profDescA">{{data.age}}</p>
+                                    </div>
+                                    <div class="profDescNames">
+                                        <div>
+                                           <p class="profDescNameE">{{data.profDescNameE}}</p>
+                                           <p class="profDescNameA">{{data.profDescNameA}}</p>
+                                           <p class="profDescNameE">{{data.profDesc}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="multiIconsOtr">
+                                    <img class="multiIcon"  pTooltip="Invoice" tooltipPosition="right"  [src]="getInvoiceStatusIcon(data.paymentStatus)" >
+                                    <img class="multiIcon"  pTooltip="Appointment" tooltipPosition="right"  [src]="appointmentStatus[data.appointmentStatus]">
+                                    <img class="multiIcon"  pTooltip="Insurance" tooltipPosition="right"  [src]="insuranceStatus[data.insuranceStatus]">
+                                    <img class="multiIcon"  pTooltip="Appointment Confirmation" tooltipPosition="right"  [src]="appointmentConfirmationStatus[data.appointmentConfirmationStatus]">
+                                    <img class="multiIcon"  pTooltip="Subscription" tooltipPosition="right"  [src]="subscriptionStatus[data.subscriptionStatus]">
+                                    <img *ngIf="data.isPerson"  pTooltip="Patient Problem"  tooltipPosition="right"  class="multiIcon" src="{{data.multiIcon}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btnOtrContainer" *ngIf="data.isEncounter">
+                            <p-button (click)="showEncounter(data, 'type')" class="encounterBtn">
+                                <img  class="encounterIcon" src="{{data.encounterIcon}}">   
+                                {{data.encounterBtn}}</p-button>
+                        </div>
+                        <div class="cardContentContainer">
+                            <div class="profBgContainer">
+                                <img class="doctorIcon" src="assets/icons/Doctor.svg">
+                                <p class="doctorName">{{data.doctorName}}</p>
+                            </div>
+                            <div class="doctorDetailsOtr">
+                                <div class="doctorDetails">
+                                    <img class="doctorIcon" src="assets/icons/timeIcon.svg">
+                                    <p class="detailsdesc">Follow-Up 10 - 10 mins</p>
+                                </div>
+                                <div class="doctorDetails">
+                                    <p class="doctorIconOP detailsdesc">OP -</p>
+                                    <p class="detailsdesc">{{data.opDetails}}</p>
+                                </div>
+                                <div class="doctorDetails">
+                                    <img class="calendarIcon" src="assets/icons/calendarIcon.svg">
+                                    <p class="detailsdesc">{{data.calendarDetails}}</p>
+                                </div>
+                                <div class="doctorDetails" *ngIf="data.isTimeShown">
+                                    <img class="clockIcon" src="{{data.clockIcon}}">
+                                    <p class="detailsdesc">{{data.time1}}</p><p class="detailsdescTime">{{data.time2}}</p>
+                                </div>
+                            </div>
+                            <div [ngClass]="{'doctorDescTime': data.isTimeShown, 'doctorDescOtr': !data.isTimeShown }">
+                                <img class="doctorDesc" src="{{data.docDescIcon1}}">
+                                <img class="doctorDesc" src="{{data.docDescIcon2}}">
+                                <img class="doctorDesc" src="{{data.docDescIcon3}}">
+                                <img class="doctorDesc" src="{{data.docDescIcon4}}">
+                                <img class="doctorDesc" src="{{data.docDescIcon5}}">
+                            </div>
+                            <div class="remainderOtr" [ngStyle]="{'top': data.isTimeShown ? '0px' : '30px'}" [ngClass]="{'doctorDescTime': data.isTimeShown, 'doctorDescOtr': !data.isTimeShown }" *ngIf="data.isRemainder">
+                                <img class="remainderIcon" src="{{data.remainderIcon}}">
+                                <p class="remainderText">{{data.remainder}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </p-card>
+            </div> 
+        </div>
+    </div>
+</div>
